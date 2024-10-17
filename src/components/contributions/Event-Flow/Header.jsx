@@ -1,5 +1,5 @@
 import React from "react";
-import rightImg from "../../../assets/Right-Image.svg";
+import rightImg from "../../../assets/images/Right-Image.svg";
 export default function Header() {
   return (
     <>
