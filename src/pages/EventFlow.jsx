@@ -7,8 +7,7 @@ export default function EventFlow() {
     return (
         <>
             <Header />
-            <Rules />
-          
+            <Rules />         
         </>
     );
 }
