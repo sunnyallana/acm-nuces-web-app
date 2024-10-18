@@ -6,10 +6,10 @@ import sponsor from '../../assets/images/sponsor-logo.png';
 export default function HeroSection() {
     return (
         <div
-            className='bg-cover bg-center h-screen flex flex-col justify-between py-20 overflow-hidden' // Added overflow-hidden
+            className='bg-cover bg-center h-screen flex flex-col justify-between py-20 overflow-hidden' 
             style={{ backgroundImage: `url(${heroBg})` }}
         >
-            {/* Logo and Register Button Section */}
+            
             <motion.div
                 className="flex flex-col items-center mt-24"
                 initial={{ opacity: 0, y: -50 }}
