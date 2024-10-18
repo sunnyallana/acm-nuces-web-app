@@ -14,10 +14,10 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 left-0 right-0 w-full z-50">
-      <div className="rounded-lg mt-4 w-11/12 mx-auto bg-[#ffffff29] bg-opacity-50 backdrop-blur-md">
+    <nav className="fixed top-0 left-0 right-0 w-full z-50 mt-4">
+      <div className="rounded-lg mt-0 w-11/12 mx-auto bg-[#ffffff29] bg-opacity-50 backdrop-blur-md">
         <div className="max-w-[90rem] mx-auto px-4">
-          <div className="flex justify-between items-center  lg:justify-start lg:gap-8">
+          <div className="flex justify-between items-center lg:justify-start lg:gap-8">
             {/* Logo */}
             <Link to="/">
               <motion.img 
