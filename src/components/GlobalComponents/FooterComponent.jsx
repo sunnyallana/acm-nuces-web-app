@@ -6,9 +6,9 @@ import { faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-sv
 const FooterComponent = () => {
   return (
     <footer className="bg-[#000017] text-white">
-      <div className="container mx-auto flex flex-row justify-between items-start px-8 py-8 md:px-24">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-8 py-8 md:px-24">
         <div className="flex-1 mb-6 md:mb-0">
-          <div className="rounded bg-zinc-300 w-72 h-72 md:w-72 md:h-72 xl:w-96 xl:h-96 2xl:w-96 2xl:h-96">
+          <div className="rounded bg-zinc-300 w-full h-72 md:w-72 md:h-72 xl:w-96 xl:h-96">
             {/* Map Embed */}
             <iframe
               title="Location Map"
@@ -22,12 +22,12 @@ const FooterComponent = () => {
           </div>
         </div>
 
-        <div className="flex-1 flex flex-col items-center md:items-between text-center md:text-left md:ml-4">
+        <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left ml-0 md:ml-4">
           <div className="mb-4">
-            <p className="mb-4 mr-4 text-[15px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px] 2xl:text-[25px] font-normal">
+            <p className="mb-4 text-[15px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px] 2xl:text-[25px] font-normal">
               Follow Us
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mb-4 justify-center items-center flex-row">
               <a href="https://www.linkedin.com/company/acmnuceskhi" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faLinkedin} className="text-zinc-300 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16" />
               </a>
@@ -39,13 +39,14 @@ const FooterComponent = () => {
               </a>
             </div>
 
+            <h1>About the Developers</h1>
             <ul className="mt-4 space-y-1 mb-4 text-[15px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px] 2xl:text-[25px] font-normal">
-              <li><a href="#" className="hover:underline">Privacy Policy</a></li>
-              <li><a href="#" className="hover:underline">Terms and Conditions</a></li>
-              <li><a href="#" className="hover:underline">Code Of Conduct</a></li>
+              <li><a href="https://www.linkedin.com/in/owais-rafiq-639494253/" className="hover:underline">Owais Rafiq</a></li>
+              <li><a href="https://www.linkedin.com/in/sunnyallana/" className="hover:underline">Sunny Shaban Ali</a></li>
+              <li><a href="https://www.linkedin.com/in/ali-nazir-74b909275/" className="hover:underline">Ali Nazir</a></li>
             </ul>
 
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col justify-center md:justify-start items-center gap-y-1 md:items-start">
               <p className="text-[15px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px] 2xl:text-[25px] font-normal">
                 Contact Us
               </p>
