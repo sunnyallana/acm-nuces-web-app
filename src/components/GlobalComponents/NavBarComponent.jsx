@@ -1,14 +1,15 @@
 import logo from '../../assets/images/coders-cup-logo.png';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { label: 'Homepage', bgColor: 'bg-[#58151E]' },
-    { label: 'Rules and Event Flow', bgColor: 'bg-[#1E1E1E]' },
-    { label: 'Registration', bgColor: 'bg-[#987734]' },
-    { label: 'FAQ', bgColor: 'bg-[#155084]' }
+    { label: 'Homepage', path: '/', bgColor: 'bg-[#58151E]' },
+    { label: 'Rules and Event Flow', path: '/event-flow', bgColor: 'bg-[#1E1E1E]' },
+    { label: 'Registration', path: '/registration', bgColor: 'bg-[#987734]' },
+    { label: 'FAQ', path: '/faq', bgColor: 'bg-[#155084]' }
   ];
 
   return (
@@ -16,7 +17,9 @@ export default function Navbar() {
       <div className="max-w-[90rem] mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <img src={logo} alt="Coders Cup Logo" className="h-8 sm:h-12 w-auto" />
+          <Link to="/">
+            <img src={logo} alt="Coders Cup Logo" className="h-8 sm:h-12 w-auto" />
+          </Link>
 
           {/* Mobile menu button */}
           <button
@@ -39,20 +42,22 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {navItems.map((item, index) => (
-              <a
+              <Link
                 key={index}
-                href="#"
+                to={item.path}
                 className={`${item.bgColor} text-white border border-white px-3 xl:px-10 flex items-center justify-center py-1 text-sm xl:text-base whitespace-nowrap`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
 
           {/* Register Now Button */}
-          <button className="hidden lg:block bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors whitespace-nowrap">
-            Register Now
-          </button>
+          <Link to="/registration">
+            <button className="hidden lg:block bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors whitespace-nowrap">
+              Register Now
+            </button>
+          </Link>
         </div>
 
         {/* Mobile/Tablet Navigation */}
@@ -63,19 +68,21 @@ export default function Navbar() {
         >
           <div className="px-2 pt-2 pb-3 space-y-2 flex flex-col sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:space-y-0 sm:gap-2 sm:p-4">
             {navItems.map((item, index) => (
-              <a
+              <Link
                 key={index}
-                href="#"
+                to={item.path}
                 className={`${item.bgColor} text-white border border-white px-3 py-2 text-base font-medium text-center 
                   sm:flex-1 sm:min-w-[150px] sm:max-w-[200px] sm:py-1`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
-            <button className="bg-red-600 text-white px-4 py-2 rounded w-full sm:flex-1 sm:min-w-[150px] sm:max-w-[200px] sm:py-1 
-              hover:bg-red-700 transition-colors">
-              Register Now
-            </button>
+            <Link to="/registration">
+              <button className="bg-red-600 text-white px-4 py-2 rounded w-full sm:flex-1 sm:min-w-[150px] sm:max-w-[200px] sm:py-1 
+                hover:bg-red-700 transition-colors">
+                Register Now
+              </button>
+            </Link>
           </div>
         </div>
       </div>

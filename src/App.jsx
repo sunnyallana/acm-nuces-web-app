@@ -1,16 +1,43 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
 import NavbarComponent from "./components/GlobalComponents/NavBarComponent";
+import FooterComponent from "./components/GlobalComponents/FooterComponent";
+import Loader from "./components/GlobalComponents/Loader"; 
 import HomePage from "./pages/HomePage";
 import EventFlow from "./pages/EventFlow";
-import FooterComponent from "./components/GlobalComponents/FooterComponent";
+import RegistrationPage from "./pages/RegistrationPage";
+import FAQPage from "./pages/FAQPage";
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000); 
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="relative">
-    <NavbarComponent/>
-     <HomePage />
-      {/* <EventFlow /> */}
-      <FooterComponent />
-      
+    <div className="relative min-h-screen flex flex-col">
+      {loading ? (
+        <Loader /> 
+      ) : (
+        <Router>
+          <NavbarComponent />
+          <div className="flex-grow">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/event-flow" element={<EventFlow />} />
+              <Route path="/registration" element={<RegistrationPage />} />
+              <Route path="/faq" element={<FAQPage />} />
+            </Routes>
+          </div>
+          <FooterComponent />
+        </Router>
+      )}
     </div>
   );
 }
