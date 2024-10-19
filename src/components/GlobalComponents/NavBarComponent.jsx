@@ -26,7 +26,7 @@ const Navbar = memo(() => {
         <div className="max-w-[90rem] mx-auto px-4">
           <div className="flex justify-between items-center lg:justify-start lg:gap-8">
             {/* Logo */}
-            <Link to="/">
+            <Link to="/" aria-label="Go to Homepage">
               <motion.img 
                 src={logo} 
                 alt="Coders Cup Logo" 
@@ -50,6 +50,7 @@ const Navbar = memo(() => {
                     <Link
                       to={item.path}
                       className={`${item.bgColor} text-white border border-white px-3 xl:px-10 flex items-center justify-center py-1.5 text-sm xl:text-base whitespace-nowrap hover:opacity-90 transition-all duration-300 ease-in-out`}
+                      aria-label={item.label}
                     >
                       {item.label}
                     </Link>
@@ -64,7 +65,7 @@ const Navbar = memo(() => {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="hidden lg:block"
               >
-                <Link to="/registration">
+                <Link to="/registration" aria-label="Register Now">
                   <button className="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700 transition-all duration-300 ease-in-out transform hover:scale-105">
                     Register Now
                   </button>
@@ -76,6 +77,7 @@ const Navbar = memo(() => {
                 onClick={toggleMenu}
                 className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-white focus:outline-none"
                 aria-expanded={isMenuOpen}
+                aria-label="Toggle menu"
               >
                 <span className="sr-only">Open main menu</span>
                 <div className="relative w-6 h-6">
@@ -118,6 +120,7 @@ const Navbar = memo(() => {
                         to={item.path}
                         className={`${item.bgColor} text-white border border-white px-3 py-2 text-base font-medium block text-center hover:opacity-90 transition-all duration-300 ease-in-out`}
                         onClick={() => setIsMenuOpen(false)}
+                        aria-label={item.label}
                       >
                         {item.label}
                       </Link>
