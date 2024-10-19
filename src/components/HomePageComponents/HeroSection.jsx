@@ -9,7 +9,6 @@ export default function HeroSection() {
             className='w-full bg-cover bg-center h-[100vh] flex flex-col justify-between py-20 overflow-hidden' 
             style={{ backgroundImage: `url(${heroBg})` }}
         >
-            
             <motion.div
                 className="flex flex-col items-center mt-12"
                 initial={{ opacity: 0, y: -50 }}
@@ -36,14 +35,14 @@ export default function HeroSection() {
 
             {/* Sponsor Section */}
             <motion.div
-                className='flex flex-col items-end pr-10'
+                className='flex flex-col items-end pr-4 sm:pr-10' // Adjusted padding for small devices
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
             >
                 <p className='text-white font-bold text-sm mb-2 pr-2'>POWERED BY</p>
                 <motion.img 
-                    className='w-24 h-auto' 
+                    className='w-24 h-auto max-w-full' // Ensures logo fits within container
                     src={sponsor} 
                     alt="Sponsor Logo"
                     initial={{ opacity: 0, rotate: -90 }}
