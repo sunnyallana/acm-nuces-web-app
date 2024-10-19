@@ -1,7 +1,6 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
 
-// Importing images with the correct paths
 import img1 from "../../../assets/images/coders-cup-23-glimpse/acm-coders-cup-23-1.jpg";
 import img2 from "../../../assets/images/coders-cup-23-glimpse/acm-coders-cup-23-2.jpg";
 import img3 from "../../../assets/images/coders-cup-23-glimpse/acm-coders-cup-23-3.jpg";
