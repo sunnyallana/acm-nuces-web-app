@@ -28,22 +28,61 @@ const FooterComponent = () => {
               Follow Us
             </p>
             <div className="flex space-x-4 mb-4 justify-center items-center flex-row">
-              <a href="https://www.linkedin.com/company/acmnuceskhi" target="_blank" rel="noopener noreferrer">
+              <a 
+                href="https://www.linkedin.com/company/acmnuceskhi" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Follow us on LinkedIn"
+              >
                 <FontAwesomeIcon icon={faLinkedin} className="text-zinc-300 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16" />
               </a>
-              <a href="https://www.facebook.com/acmnuceskhi/" target="_blank" rel="noopener noreferrer">
+              <a 
+                href="https://www.facebook.com/acmnuceskhi/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Follow us on Facebook"
+              >
                 <FontAwesomeIcon icon={faFacebook} className="text-zinc-300 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16" />
               </a>
-              <a href="https://www.instagram.com/acmnuceskhi/" target="_blank" rel="noopener noreferrer">
+              <a 
+                href="https://www.instagram.com/acmnuceskhi/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Follow us on Instagram"
+              >
                 <FontAwesomeIcon icon={faInstagram} className="text-zinc-300 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16" />
               </a>
             </div>
 
             <h1>About the Developers</h1>
             <ul className="mt-4 space-y-1 mb-4 text-[15px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px] 2xl:text-[25px] font-normal">
-              <li><a href="https://www.linkedin.com/in/owais-rafiq-639494253/" className="hover:underline">Owais Rafiq</a></li>
-              <li><a href="https://www.linkedin.com/in/sunnyallana/" className="hover:underline">Sunny Shaban Ali</a></li>
-              <li><a href="https://www.linkedin.com/in/ali-nazir-74b909275/" className="hover:underline">Ali Nazir</a></li>
+              <li>
+                <a 
+                  href="https://www.linkedin.com/in/owais-rafiq-639494253/" 
+                  className="hover:underline" 
+                  aria-label="Owais Rafiq's LinkedIn profile"
+                >
+                  Owais Rafiq
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.linkedin.com/in/sunnyallana/" 
+                  className="hover:underline" 
+                  aria-label="Sunny Shaban Ali's LinkedIn profile"
+                >
+                  Sunny Shaban Ali
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.linkedin.com/in/ali-nazir-74b909275/" 
+                  className="hover:underline" 
+                  aria-label="Ali Nazir's LinkedIn profile"
+                >
+                  Ali Nazir
+                </a>
+              </li>
             </ul>
 
             <div className="mt-8 flex flex-col justify-center md:justify-start items-center gap-y-1 md:items-start">
@@ -51,12 +90,12 @@ const FooterComponent = () => {
                 Contact Us
               </p>
               <p className="flex items-center text-[15px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px] 2xl:text-[25px] font-normal">
-                <a href="tel:+9221341005416" className="flex items-center text-white">
+                <a href="tel:+9221341005416" className="flex items-center text-white" aria-label="Call us at (+92-213) 410-0541-6">
                   <FontAwesomeIcon icon={faPhone} className="mr-2" /> (+92-213) 410-0541-6
                 </a>
               </p>
               <p className="flex items-center text-[15px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px] 2xl:text-[25px] font-normal">
-                <a href="mailto:info@nu.edu.pk" className="flex items-center text-white">
+                <a href="mailto:info@nu.edu.pk" className="flex items-center text-white" aria-label="Email us at info@nu.edu.pk">
                   <span className="mr-2">✉️</span> info@nu.edu.pk
                 </a>
               </p>
