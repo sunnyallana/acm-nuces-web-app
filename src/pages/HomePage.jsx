@@ -4,7 +4,7 @@ import AboutCodersCup from "../components/HomePageComponents/AboutCodersCup"
 import AboutACM from "../components/HomePageComponents/AboutACM"
 export default function HomePage(){
     return(
-        <div>
+        <div className="overflow-hidden">
             <HeroSection />
             <AboutCodersCup/>
             <AboutACM/>

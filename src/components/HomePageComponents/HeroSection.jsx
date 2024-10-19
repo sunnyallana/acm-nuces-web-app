@@ -6,12 +6,12 @@ import sponsor from '../../assets/images/sponsor-logo.png';
 export default function HeroSection() {
     return (
         <div
-            className='bg-cover bg-center h-screen flex flex-col justify-between py-20 overflow-hidden' 
+            className='w-full bg-cover bg-center h-full flex flex-col justify-between py-20 overflow-hidden' 
             style={{ backgroundImage: `url(${heroBg})` }}
         >
             
             <motion.div
-                className="flex flex-col items-center mt-24"
+                className="flex flex-col items-center mt-32"
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: 'easeOut' }}
@@ -36,7 +36,7 @@ export default function HeroSection() {
 
             {/* Sponsor Section */}
             <motion.div
-                className='flex flex-col items-end pr-10'
+                className='flex flex-col items-end pr-10 mt-16'
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
