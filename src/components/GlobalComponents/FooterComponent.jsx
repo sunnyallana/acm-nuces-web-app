@@ -25,7 +25,7 @@ const FooterComponent = () => {
 
         {/* Developers Column */}
         <div className="flex-grow flex flex-col items-center justify-center text-center mx-4 mb-4 md:mb-0">
-          <h1 className="mb-2 text-lg font-bold text-[18px] md:text-[20px]">About the Developers</h1>
+          <h1 className="mb-2 text-lg font-bold uppercase text-[18px] md:text-[20px]">About the Developers</h1>
           <ul className="mt-2 space-y-1 mb-4 text-[14px] sm:text-[15px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[22px] font-normal">
             <li>
               <a 
@@ -60,7 +60,7 @@ const FooterComponent = () => {
         {/* Social Links and Contact Us Column */}
         <div className="flex-grow flex flex-col items-center justify-center text-center mx-4 mb-4 md:mb-0">
           <div className="mb-4">
-            <h1 className="mb-2 text-lg font-bold text-[18px] md:text-[20px]">Follow Us</h1>
+            <h1 className="mb-2 text-lg font-bold uppercase text-[18px] md:text-[20px]">Follow Us</h1>
             <div className="flex space-x-4 mb-2 justify-center items-center">
               <a 
                 href="https://www.linkedin.com/company/acmnuceskhi" 
@@ -90,7 +90,7 @@ const FooterComponent = () => {
           </div>
 
           <div className="flex flex-col justify-center items-center gap-y-1">
-            <h1 className="mb-2 text-lg font-bold text-[18px] md:text-[20px]">Contact Us</h1>
+            <h1 className="mb-2 text-lg font-bold uppercase text-[18px] md:text-[20px]">Contact Us</h1>
             <p className="flex items-center text-[14px] sm:text-[15px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[22px] font-normal">
               <a href="tel:+9221341005416" className="flex items-center text-white" aria-label="Call us at (+92-213) 410-0541-6">
                 <FontAwesomeIcon icon={faPhone} className="mr-2" /> (+92-213) 410-0541-6
