@@ -1,5 +1,5 @@
 import React from "react";
-import rightImg from "../../../assets/images/Right-Image.svg";
+import img from "../../../assets/images/header-registration.svg";
 
 export default function Header() {
   const handleDragStart = (event) => {
@@ -26,7 +26,7 @@ export default function Header() {
         <div className="2xl:w-[10%] xl:w-[15%] lg:w-[15%] md:w-[20%] sm:w-[10%]"></div>
         <div className="2xl:w-[40%] xl:w-[35%] lg:w-[35%] md:w-[33%] sm:w-[40%] w-[75%] mb-3 sm:mb-0" style={{ userSelect: 'none' }}>
           <img 
-            src={rightImg} 
+            src={img} 
             alt="right-img" 
             style={{ userSelect: 'none' }} 
             onDragStart={handleDragStart}

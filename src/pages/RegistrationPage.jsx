@@ -1,8 +1,11 @@
 import React from 'react'
+import Header from '../components/contributions/Register-Now/Header'
 
 const RegistrationPage = () => {
   return (
-    <div>RegistrationPage</div>
+    <div>
+      <Header />
+    </div>
   )
 }
 
