@@ -11,7 +11,6 @@ import FAQPage from "./pages/FAQPage";
 export default function App() {
   const [loading, setLoading] = useState(true);
 
-  
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
@@ -27,14 +26,16 @@ export default function App() {
       ) : (
         <Router>
           <NavbarComponent />
-          <div className="flex-grow">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/event-flow" element={<EventFlow />} />
-              <Route path="/registration" element={<RegistrationPage />} />
-              <Route path="/faq" element={<FAQPage />} />
-            </Routes>
-          </div>
+          <main>
+            <div className="flex-grow">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/event-flow" element={<EventFlow />} />
+                <Route path="/registration" element={<RegistrationPage />} />
+                <Route path="/faq" element={<FAQPage />} />
+              </Routes>
+            </div>
+          </main>
           <FooterComponent />
         </Router>
       )}
