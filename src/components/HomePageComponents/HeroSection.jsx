@@ -6,7 +6,7 @@ import sponsor from '../../assets/images/sponsors/sponsor-logo.png';
 export default function HeroSection() {
     return (
         <div
-            className='w-full bg-cover bg-center h-[100vh] flex flex-col justify-between py-20 overflow-hidden' 
+            className='w-full bg-cover bg-center h-full flex flex-col justify-between py-20 overflow-hidden' 
             style={{ backgroundImage: `url(${heroBg})` }}
         >
             <motion.div

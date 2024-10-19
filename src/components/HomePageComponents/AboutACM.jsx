@@ -45,8 +45,9 @@ export default function AboutACM() {
             {/* First column */}
             <div className='flex flex-col items-center justify-center w-full md:w-6/12 pt-10'>
                 {/* Move heading to the top for mobile view */}
-                <h1 className='text-center font-bold text-4xl md:text-7xl order-1 md:order-1'>ABOUT ACM</h1>
-
+                <h1 className='text-center font-bold text-4xl md:text-7xl order-1 md:order-1'>
+                ABOUT <span className="text-[#17A0B7]">ACM</span>
+                </h1>
                 {/* Paragraph below the heading */}
                 <p className='text-center font-extralight text-sm w-10/12 md:w-7/12 mb-20 mt-20 order-2 md:order-2'>
                     More than 75 successful projects, more than 250 satisfied clients. Join us on
