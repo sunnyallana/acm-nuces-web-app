@@ -1,5 +1,5 @@
-import aboutBg from '../../assets/images/about-acm-bg.png';
-import item1Logo from '../../assets/images/item-1.png'; // Import image directly
+import aboutBg from '../../assets/images/backgrounds/about-acm-bg.png';
+import item1Logo from '../../assets/images/item-1.png';
 
 export default function AboutACM() {
     const aboutItems = [
