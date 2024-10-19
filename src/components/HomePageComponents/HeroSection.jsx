@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import logo from '../../assets/images/coders-cup-logo.png';
-import heroBg from '../../assets/images/hero-bg.png';
-import sponsor from '../../assets/images/sponsor-logo.png';
+import heroBg from '../../assets/images/backgrounds/hero-bg.png';
+import sponsor from '../../assets/images/sponsors/sponsor-logo.png';
 
 export default function HeroSection() {
     return (
