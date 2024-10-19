@@ -14,7 +14,6 @@ export default function Navbar() {
     { label: 'FAQ', path: '/faq', bgColor: 'bg-[#155084]' }
   ];
 
-  // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -123,18 +122,6 @@ export default function Navbar() {
                       </Link>
                     </motion.div>
                   ))}
-                  <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 0.4 }}
-                  >
-                    <Link to="/registration" onClick={() => setIsMenuOpen(false)}>
-                      <button className="bg-red-600 text-white px-4 py-2 rounded w-full
-                        hover:bg-red-700 transition-all duration-300 ease-in-out transform hover:scale-105">
-                        Register Now
-                      </button>
-                    </Link>
-                  </motion.div>
                 </div>
               </motion.div>
             )}
