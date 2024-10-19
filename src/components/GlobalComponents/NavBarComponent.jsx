@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, memo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../../assets/images/coders-cup-logo.png';
 
-export default function Navbar() {
+const Navbar = memo(() => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -17,6 +17,8 @@ export default function Navbar() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
+
+  const toggleMenu = () => setIsMenuOpen(prev => !prev);
 
   return (
     <nav className="fixed top-0 left-0 right-0 w-full z-50 mt-4">
@@ -71,9 +73,9 @@ export default function Navbar() {
 
               {/* Mobile menu button */}
               <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                onClick={toggleMenu}
                 className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-white focus:outline-none"
-                aria-expanded="false"
+                aria-expanded={isMenuOpen}
               >
                 <span className="sr-only">Open main menu</span>
                 <div className="relative w-6 h-6">
@@ -114,8 +116,7 @@ export default function Navbar() {
                     >
                       <Link
                         to={item.path}
-                        className={`${item.bgColor} text-white border border-white px-3 py-2 text-base font-medium block text-center
-                          hover:opacity-90 transition-all duration-300 ease-in-out`}
+                        className={`${item.bgColor} text-white border border-white px-3 py-2 text-base font-medium block text-center hover:opacity-90 transition-all duration-300 ease-in-out`}
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {item.label}
@@ -130,4 +131,6 @@ export default function Navbar() {
       </div>
     </nav>
   );
-}
+});
+
+export default Navbar;
