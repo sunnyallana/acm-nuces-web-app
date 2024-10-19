@@ -44,17 +44,17 @@ export default function AboutACM() {
         <div className='bg-cover flex flex-col md:flex-row text-white justify-center mt-10 py-20' style={{ backgroundImage: `url(${aboutBg})` }}>
             {/* First column */}
             <div className='flex flex-col items-center justify-center w-full md:w-6/12 pt-10'>
-                <h1 className='text-center font-bold text-4xl md:text-7xl order-1 md:order-1'>
+                <h1 className='text-center font-bold text-4xl md:text-7xl'>
                     ABOUT <span className="text-[#17A0B7]">ACM</span>
                 </h1>
-                <p className='text-center font-extralight text-sm w-10/12 md:w-7/12 mb-20 mt-20 order-2 md:order-2'>
+                <p className='text-center font-extralight text-sm w-10/12 md:w-7/12 mb-20 mt-20'>
                     More than 75 successful projects, more than 250 satisfied clients. Join us on
                     this creative journey with many success stories and see how we bring
                     companies and businesses to life.
                 </p>
 
                 {/* Cards Section */}
-                <div className='flex flex-col items-center justify-center w-full gap-8 order-3 md:order-3'>
+                <div className='flex flex-col items-center justify-center w-full gap-8'>
                     {firstColItems.map((item, index) => {
                         const marginClass = (index === 1) ? 'mb-8' : 'mb-4'; // 8 margin for 2nd card, 4 for others
                         return (
@@ -79,7 +79,7 @@ export default function AboutACM() {
 
             {/* Second column */}
             <div className='flex flex-col items-center justify-center w-full md:w-6/12'>
-                <div className='flex flex-col items-center justify-center w-full gap-8 order-4 md:order-4'>
+                <div className='flex flex-col items-center justify-center w-full gap-8'>
                     {secondColItems.map((item, index) => {
                         const marginClass = (index === 1) ? 'mb-8' : 'mb-4'; // 8 margin for 2nd card, 4 for others
                         return (
