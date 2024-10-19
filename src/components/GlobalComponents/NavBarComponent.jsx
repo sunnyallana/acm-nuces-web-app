@@ -1,10 +1,11 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../../assets/images/coders-cup-logo.png';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navItems = [
     { label: 'Homepage', path: '/', bgColor: 'bg-[#58151E]' },
@@ -12,6 +13,11 @@ export default function Navbar() {
     { label: 'Registration', path: '/registration', bgColor: 'bg-[#987734]' },
     { label: 'FAQ', path: '/faq', bgColor: 'bg-[#155084]' }
   ];
+
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 w-full z-50 mt-4">
