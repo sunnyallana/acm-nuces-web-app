@@ -24,7 +24,7 @@ export default function HeroSection() {
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                 />
                 <motion.button
-                    className='text-white text-lg bg-blue-600 border border-white rounded-md px-8 py-3 hover:bg-blue-700'
+                    className='text-white text-lg bg-[#0F5DA3] border border-white rounded-md px-8 py-3 hover:bg-[#0C4B85]'
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ type: 'spring', stiffness: 300 }}
@@ -35,7 +35,7 @@ export default function HeroSection() {
 
             {/* Sponsor Section */}
             <motion.div
-                className='flex flex-col items-end pr-4 sm:pr-10' // Adjusted padding for small devices
+                className='flex flex-col items-end pr-4 sm:pr-10 mt-12 md:mt-0' // Margin only on small devices
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
