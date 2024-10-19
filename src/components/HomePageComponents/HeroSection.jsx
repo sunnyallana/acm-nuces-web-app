@@ -1,9 +1,16 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import logo from '../../assets/images/coders-cup-logo.png';
 import heroBg from '../../assets/images/backgrounds/hero-bg.png';
 import sponsor from '../../assets/images/sponsors/sponsor-logo.png';
 
 export default function HeroSection() {
+    const navigate = useNavigate(); // Initialize useNavigate
+
+    const handleRegisterClick = () => {
+        navigate('/registration'); // Navigate to the registration page
+    };
+
     return (
         <div
             className='w-full bg-cover bg-center h-full flex flex-col justify-between py-20 overflow-hidden' 
@@ -28,6 +35,7 @@ export default function HeroSection() {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ type: 'spring', stiffness: 300 }}
+                    onClick={handleRegisterClick} // Handle button click
                 >
                     Register Now
                 </motion.button>
@@ -35,14 +43,14 @@ export default function HeroSection() {
 
             {/* Sponsor Section */}
             <motion.div
-                className='flex flex-col items-end pr-4 sm:pr-10 mt-12 md:mt-0' // Margin only on small devices
+                className='flex flex-col items-end pr-4 sm:pr-10 mt-12 md:mt-0'
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
             >
                 <p className='text-white font-bold text-sm mb-2 pr-2'>POWERED BY</p>
                 <motion.img 
-                    className='w-24 h-auto max-w-full' // Ensures logo fits within container
+                    className='w-24 h-auto max-w-full'
                     src={sponsor} 
                     alt="Sponsor Logo"
                     initial={{ opacity: 0, rotate: -90 }}
