@@ -1,9 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import rightImg from "../../../assets/images/Right-Image.svg";
 
 export default function Header() {
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const handleDragStart = (event) => {
     event.preventDefault();
+  };
+
+  const handleRegisterClick = () => {
+    navigate('/registration'); // Navigate to the registration page
   };
 
   return (
@@ -19,7 +26,10 @@ export default function Header() {
             text and icons.
           </p>
 
-          <button className="bg-[#155084] 2xl:px-6 2xl:py-3 2xl:text-4xl xl:py-3 xl:px-4 lg:py-2 lg:px-4 py-2 px-4 font-bold lg:mt-5 2xl:mt-7 sm:mt-2 mt-4 rounded-md hover:bg-[#33618a] transition duration-100 xl:text-[22px] lg:text-[16px] md:text-[12px] sm:text-[12px] text-[20px]">
+          <button
+            className="bg-[#155084] 2xl:px-6 2xl:py-3 2xl:text-4xl xl:py-3 xl:px-4 lg:py-2 lg:px-4 py-2 px-4 font-bold lg:mt-5 2xl:mt-7 sm:mt-2 mt-4 rounded-md hover:bg-[#33618a] transition duration-100 xl:text-[22px] lg:text-[16px] md:text-[12px] sm:text-[12px] text-[20px]"
+            onClick={handleRegisterClick} // Handle button click
+          >
             Register Now
           </button>
         </div>
