@@ -3,15 +3,28 @@ import AccordianItem from '../components/contributions/FAQ-Section/AccordianItem
 
 const FAQPage = () => {
   const faqData = [
-    { question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?", answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget." },
+    { question: "What is competitive programming?", answer: "Competitive programming is a mind sport where participants solve algorithmic problems by writing programs. The goal is to write the most efficient and correct solution within a given time limit." },
 
-    { question: "Pellentesque habitant morbi tristique senectus et netus?", answer: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas." },
+    { question: "How does the contest work?", answer: "The contest will be held on a virtual judge platform, where you'll be presented with a set of problems. You'll have to write code to solve these problems and submit your solutions. The platform will automatically judge your code and provide feedback on whether it's correct and efficient." },
     
-    { question: "Aenean vehicula, lectus ac scelerisque sagittis?", answer: "Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo.Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo.Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo.Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo.Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo.Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo." },
+    { question: "What languages can I use for coding?", answer: "Typically, popular languages like C++, Java, Python, and C are supported." },
 
-    { question: "Aenean vehicula, lectus ac scelerisque sagittis?", answer: "Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo." },
+    { question: "How is my performance evaluated?", answer: "Your performance is evaluated based on the number of problems you solve correctly and the time it takes you to solve them."},
+    
+    { question: "What should I expect from the problems?", answer: "The problems will range in difficulty, from easy to hard. Some may require basic algorithms and data structures, while others might involve more complex concepts" },
 
-    { question: "Aenean vehicula, lectus ac scelerisque sagittis?", answer: "Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo Aenean vehicula, lectus ac scelerisque sagittis, felis risus iaculis purus, sit amet fermentum massa lorem id justo." },
+    { question: "What is the contest platform?", answer: "Virtual Judge (vjudge.com)" },
+
+    { question: "Can I use external resources (e.g., Google Search) during the contest?", answer: "This is strictly not allowed." },
+
+    { question: "What happens if I encounter a bug in the problem statement or the platform?", answer: "If you find an issue, report it to the contest organizers immediately." },
+
+    { question: "How can I practice for competitive programming?", answer: "There are many online platforms like Codeforces and AtCoder where you can practice solving coding problems." },
+
+    { question: "Who can be my teammates?", answer: "Any 2 from your batch can be your teammmates, however for 20K batch it is allowed that they team-up with 21K batch." },
+
+    { question: "What is the max team size?", answer: "Minimum: 2, Maximum: 3" },
+
 
     
     
