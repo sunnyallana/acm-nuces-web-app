@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -21,21 +23,22 @@ const RegistrationForm = () => {
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [focusedInput, setFocusedInput] = useState('');
 
   const fieldLabels = {
-    teamName: 'Team Name (e.g. Team Caltech)',
-    teamVjudgeUsername: "Team's Vjudge Username (e.g. caltech_team)",
-    leaderName: 'Leader Name (e.g. Sheldon Cooper)',
-    leaderId: 'Leader ID (e.g. 22K-1234)',
-    leaderEmail: 'Leader Email (e.g. k221234@nu.edu.pk)',
-    leaderWhatsapp: 'Leader WhatsApp Number (e.g. 0312-345-6789)',
-    mem1Name: 'Member 1 Name (e.g. Leonard Hofstadter)',
-    mem1Id: 'Member 1 ID (e.g. 21B-5678)',
-    mem1Email: 'Member 1 Email (e.g. k224567@nu.edu.pk)',
-    mem1Whatsapp: 'Member 1 WhatsApp Number (e.g. 0398-765-4321)',
+    teamName: 'Team Name',
+    teamVjudgeUsername: "Team's Vjudge Username",
+    leaderName: 'Leader Name',
+    leaderId: 'Leader ID',
+    leaderEmail: 'Leader NU Email', // Updated label
+    leaderWhatsapp: 'Leader WhatsApp Number',
+    mem1Name: 'Member 1 Name',
+    mem1Id: 'Member 1 ID',
+    mem1Email: 'Member 1 NU Email', // Updated label
+    mem1Whatsapp: 'Member 1 WhatsApp Number',
     mem2Name: 'Member 2 Name (optional)',
     mem2Id: 'Member 2 ID (optional)',
-    mem2Email: 'Member 2 Email (optional)',
+    mem2Email: 'Member 2 NU Email (optional)', // Updated label
     mem2Whatsapp: 'Member 2 WhatsApp Number (optional)',
   };
 
@@ -64,13 +67,11 @@ const RegistrationForm = () => {
       case 'mem1Whatsapp':
       case 'mem2Whatsapp':
         if (!value && name !== 'mem2Whatsapp') return `${fieldLabels[name]} is required.`;
-        if (value && !/^\d{4}-\d{3}-\d{4}$/.test(value)) return 'Invalid WhatsApp number format. Use: 03XX-XXX-XXXX.';
-        return '';
+        return ''; // Phone validation handled by the library
       default:
         return '';
     }
   };
-  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -83,6 +84,11 @@ const RegistrationForm = () => {
 
     setFormData(prevData => ({ ...prevData, [name]: newValue }));
     setErrors(prevErrors => ({ ...prevErrors, [name]: validateField(name, newValue) }));
+  };
+
+  const handlePhoneChange = (name, value) => {
+    setFormData(prevData => ({ ...prevData, [name]: value }));
+    setErrors(prevErrors => ({ ...prevErrors, [name]: validateField(name, value) }));
   };
 
   const validateForm = () => {
@@ -168,7 +174,7 @@ const RegistrationForm = () => {
     setIsSubmitting(false);
   };
 
-  const renderField = (name, label, type = 'text', required = true, colspan = false) => (
+  const renderField = (name, label, placeholder, type = 'text', required = true, colspan = false) => (
     <div key={name} className={colspan ? "col-span-1 sm:col-span-2" : ""}>
       <label htmlFor={name} className="block mb-2">{label}</label>
       <input
@@ -178,7 +184,40 @@ const RegistrationForm = () => {
         value={formData[name]}
         onChange={handleChange}
         required={required}
+        placeholder={placeholder}
         className="w-full p-2 border rounded bg-[#2a2b55] border-[#3d3e6b] text-white"
+      />
+      {errors[name] && <div className="text-red-400 text-sm">{errors[name]}</div>}
+    </div>
+  );
+
+  const renderPhoneField = (name, label, placeholder, required = true) => (
+    <div key={name} className="col-span-1 sm:col-span-2">
+      <label htmlFor={name} className="block mb-2">{label}</label>
+      <PhoneInput
+        country={'pk'}
+        value={formData[name]}
+        onChange={phone => handlePhoneChange(name, phone)}
+        required={required}
+        onFocus={() => setFocusedInput(name)}
+        onBlur={() => setFocusedInput('')}
+        inputStyle={{
+          width: '100%',
+          padding: '10px 10px 10px 45px',
+          border: `1.5px solid ${focusedInput === name ? 'white' : '#3d3e6b'}`,
+          borderRadius: '4px',
+          background: '#2a2b55',
+          color: 'white',
+          height: '48px',
+          transition: 'border 0.3s',
+        }}
+        buttonStyle={{
+          background: '#bdc2d2',
+          border: 'none',
+          borderRadius: '4px 0px 0px 4px',
+          height: '48px',
+        }}
+        placeholder={placeholder}
       />
       {errors[name] && <div className="text-red-400 text-sm">{errors[name]}</div>}
     </div>
@@ -191,20 +230,20 @@ const RegistrationForm = () => {
         <div className="font-['Roboto_Mono'] w-full max-w-4xl mx-auto">
           <div className="bg-[#23244e] rounded-2xl shadow-md p-4 sm:p-6">
             <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {renderField('teamName', fieldLabels.teamName, 'text', true, true)}
-              {renderField('teamVjudgeUsername', fieldLabels.teamVjudgeUsername, 'text', true, true)}
-              {renderField('leaderName', fieldLabels.leaderName)}
-              {renderField('leaderId', fieldLabels.leaderId)}
-              {renderField('leaderEmail', fieldLabels.leaderEmail, 'email')}
-              {renderField('leaderWhatsapp', fieldLabels.leaderWhatsapp)}
-              {renderField('mem1Name', fieldLabels.mem1Name)}
-              {renderField('mem1Id', fieldLabels.mem1Id)}
-              {renderField('mem1Email', fieldLabels.mem1Email, 'email')}
-              {renderField('mem1Whatsapp', fieldLabels.mem1Whatsapp)}
-              {renderField('mem2Name', fieldLabels.mem2Name, 'text', false)}
-              {renderField('mem2Id', fieldLabels.mem2Id, 'text', false)}
-              {renderField('mem2Email', fieldLabels.mem2Email, 'email', false)}
-              {renderField('mem2Whatsapp', fieldLabels.mem2Whatsapp, 'text', false)}
+              {renderField('teamName', fieldLabels.teamName, 'e.g. Team Caltech', 'text', true, true)}
+              {renderField('teamVjudgeUsername', fieldLabels.teamVjudgeUsername, 'e.g. caltech_team', 'text', true, true)}
+              {renderField('leaderName', fieldLabels.leaderName, 'e.g. Sheldon Cooper')}
+              {renderField('leaderId', fieldLabels.leaderId, 'e.g. 22K-1234')}
+              {renderField('leaderEmail', fieldLabels.leaderEmail, 'e.g. k221234@nu.edu.pk', 'email')}
+              {renderPhoneField('leaderWhatsapp', fieldLabels.leaderWhatsapp, 'e.g. +92 300 0000000')}
+              {renderField('mem1Name', fieldLabels.mem1Name, 'e.g. Leonard Hofstadter')}
+              {renderField('mem1Id', fieldLabels.mem1Id, 'e.g. 21P-5678')}
+              {renderField('mem1Email', fieldLabels.mem1Email, 'e.g. k224567@nu.edu.pk', 'email')}
+              {renderPhoneField('mem1Whatsapp', fieldLabels.mem1Whatsapp, 'e.g. +92 300 0000000')}
+              {renderField('mem2Name', fieldLabels.mem2Name, 'e.g. Howard Wolowitz', 'text', false)}
+              {renderField('mem2Id', fieldLabels.mem2Id, 'e.g. 20K-1234', 'text', false)}
+              {renderField('mem2Email', fieldLabels.mem2Email, 'e.g. k225678@nu.edu.pk', 'email', false)}
+              {renderPhoneField('mem2Whatsapp', fieldLabels.mem2Whatsapp, 'e.g. +92 300 0000000', false)}
               
               <div className="col-span-1 sm:col-span-2">
                 <button 
