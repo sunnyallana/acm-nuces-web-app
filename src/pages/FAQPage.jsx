@@ -33,7 +33,9 @@ const FAQPage = () => {
   return (
     <div className=" bg-gray-900 text-white pt-24 pb-16"> {/* Adjusts for the navbar height */}
       <div className="text-center m-10">
-        <h2 className="text-5xl font-bold uppercase tracking-wider">Frequently Asked Questions</h2>
+        <h2 className="bg-gradient-to-r from-gray-200 to-gray-300 bg-clip-text text-transparent text-center text-5xl font-bold uppercase tracking-wider mb-8">
+          Frequently Asked Questions
+        </h2>
       </div>
       <div className="flex flex-col items-center">
         {faqData.map((faq, index) => (

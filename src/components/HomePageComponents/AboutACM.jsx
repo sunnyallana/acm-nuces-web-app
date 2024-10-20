@@ -44,9 +44,9 @@ export default function AboutACM() {
         <div className='bg-cover flex flex-col md:flex-row text-white justify-center mt-10 py-20' style={{ backgroundImage: `url(${aboutBg})` }}>
             {/* First column */}
             <div className='flex flex-col items-center justify-center w-full md:w-6/12 pt-10'>
-                <h1 className='text-center font-bold text-4xl md:text-7xl'>
-                    ABOUT <span className="text-[#17A0B7]">ACM</span>
-                </h1>
+            <h1 className="text-center font-bold text-4xl md:text-7xl bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text">
+                ABOUT <span className="text-[#17A0B7]">ACM</span>
+            </h1>
                 <p className='text-center font-extralight text-sm w-10/12 md:w-7/12 mb-20 mt-20'>
                     More than 75 successful projects, more than 250 satisfied clients. Join us on
                     this creative journey with many success stories and see how we bring

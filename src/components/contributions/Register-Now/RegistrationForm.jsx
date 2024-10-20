@@ -225,7 +225,11 @@ const RegistrationForm = () => {
 
   return (
     <>
-      <h1 className="text-white text-center text-3xl md:text-7xl font-bold py-2 px-2 mb-12 mt-24">REGISTER HERE</h1>
+      <h1 className="text-white text-center text-[34px] 2xl:text-[80px] xl:text-[66px] lg:text-[55px] md:text-[40px] sm:text-[30px] font-bold py-2 px-2 mb-12 mt-24">
+        <span className="bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text">
+          REGISTER HERE
+        </span>
+      </h1>
       <div className="min-h-screen py-10 px-4 text-gray-300">
         <div className="font-['Roboto_Mono'] w-full max-w-4xl mx-auto">
           <div className="bg-[#23244e] rounded-2xl shadow-md p-4 sm:p-6">
@@ -244,7 +248,7 @@ const RegistrationForm = () => {
               {renderField('mem2Id', fieldLabels.mem2Id, 'e.g. 20K-1234', 'text', false)}
               {renderField('mem2Email', fieldLabels.mem2Email, 'e.g. k225678@nu.edu.pk', 'email', false)}
               {renderPhoneField('mem2Whatsapp', fieldLabels.mem2Whatsapp, 'e.g. +92 300 0000000', false)}
-              
+
               <div className="col-span-1 sm:col-span-2">
                 <button 
                   type="submit" 
