@@ -3,6 +3,7 @@ import AboutCodersCup from "../components/HomePageComponents/AboutCodersCup"
 import AboutACM from "../components/HomePageComponents/AboutACM"
 import SponsorComp from "../components/HomePageComponents/SponsorComp"
 import CodersCupBanner from "../components/HomePageComponents/CodersCupBanner"
+import HousesSection from "../components/HomePageComponents/HousesSection"
 
 export default function HomePage(){
     return(
@@ -10,6 +11,7 @@ export default function HomePage(){
             <HeroSection />
             <AboutCodersCup/>
             <AboutACM/>
+            <HousesSection/>
             <SponsorComp/>
             <CodersCupBanner/>
         </div>
