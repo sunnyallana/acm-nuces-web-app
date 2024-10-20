@@ -239,15 +239,15 @@ const RegistrationForm = () => {
               {renderField('leaderName', fieldLabels.leaderName, 'e.g. Sheldon Cooper')}
               {renderField('leaderId', fieldLabels.leaderId, 'e.g. 22K-1234')}
               {renderField('leaderEmail', fieldLabels.leaderEmail, 'e.g. k221234@nu.edu.pk', 'email')}
-              {renderPhoneField('leaderWhatsapp', fieldLabels.leaderWhatsapp, 'e.g. +92 300 0000000')}
+              {renderPhoneField('leaderWhatsapp', fieldLabels.leaderWhatsapp, 'e.g. +92 312 0000000')}
               {renderField('mem1Name', fieldLabels.mem1Name, 'e.g. Leonard Hofstadter')}
-              {renderField('mem1Id', fieldLabels.mem1Id, 'e.g. 21P-5678')}
-              {renderField('mem1Email', fieldLabels.mem1Email, 'e.g. k224567@nu.edu.pk', 'email')}
-              {renderPhoneField('mem1Whatsapp', fieldLabels.mem1Whatsapp, 'e.g. +92 300 0000000')}
+              {renderField('mem1Id', fieldLabels.mem1Id, 'e.g. 22P-5678')}
+              {renderField('mem1Email', fieldLabels.mem1Email, 'e.g. p224567@nu.edu.pk', 'email')}
+              {renderPhoneField('mem1Whatsapp', fieldLabels.mem1Whatsapp, 'e.g. +92 313 0000000')}
               {renderField('mem2Name', fieldLabels.mem2Name, 'e.g. Howard Wolowitz', 'text', false)}
-              {renderField('mem2Id', fieldLabels.mem2Id, 'e.g. 20K-1234', 'text', false)}
-              {renderField('mem2Email', fieldLabels.mem2Email, 'e.g. k225678@nu.edu.pk', 'email', false)}
-              {renderPhoneField('mem2Whatsapp', fieldLabels.mem2Whatsapp, 'e.g. +92 300 0000000', false)}
+              {renderField('mem2Id', fieldLabels.mem2Id, 'e.g. 22L-1234', 'text', false)}
+              {renderField('mem2Email', fieldLabels.mem2Email, 'e.g. l221234@nu.edu.pk', 'email', false)}
+              {renderPhoneField('mem2Whatsapp', fieldLabels.mem2Whatsapp, 'e.g. +92 314 0000000', false)}
 
               <div className="col-span-1 sm:col-span-2">
                 <button 
