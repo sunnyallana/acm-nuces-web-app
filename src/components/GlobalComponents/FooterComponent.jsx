@@ -67,12 +67,13 @@ const FooterComponent = () => {
             </div>
           </div>
 
+
           {/* Developers Column */}
           <div className="flex-grow flex flex-col items-center justify-center text-center mx-4 mb-4 md:mb-0">
           <h1 className="mb-2 text-lg font-bold uppercase text-[18px] md:text-[20px]">About the Developers</h1>
-          <div className="flex justify-center space-x-4 mt-4">
+          <div className="flex flex-wrap justify-center">
             {developers.map((dev, index) => (
-              <div key={index} className="flex flex-col items-center">
+              <div key={index} className="flex flex-col items-center m-2 w-1/4 max-w-[150px]"> {/* Limit width */}
                 <a href={dev.linkedIn} target="_blank" rel="noopener noreferrer" aria-label={`Profile of ${dev.name}`}>
                   <AnimatedTooltip items={[dev]} />
                 </a>
@@ -80,8 +81,9 @@ const FooterComponent = () => {
             ))}
           </div>
           <div className="mb-4" />
-            {/* Margin below tooltips */}
-            <div className="mb-4" />
+
+
+
             {/* GitHub Button */}
             <h1 className="mb-2 text-lg font-bold uppercase text-[18px] md:text-[20px]">REPOSITORY</h1> 
             <a 
