@@ -36,7 +36,8 @@ export default function GlimpseComponentlow() {
     <>
       <div className="flex justify-center px-2 sm:px-0 text-center items-center mb-12 md:mb-20 text-[34px] md:text-[41px] lg:text-[57px] xl:text-[70px] 2xl:text-7xl font-[700]">
         <h1 className="fira-code-heading text-[#FFFFFF]">
-          <span className="text-[#17A0B7]">CODERS CUP 2023 </span>GLIMPSE
+          <span className="text-[#17A0B7]">CODERS CUP 2023 </span>
+          <span className="bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text">GLIMPSE</span>
         </h1>
       </div>
     
