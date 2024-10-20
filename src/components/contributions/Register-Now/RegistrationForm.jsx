@@ -204,18 +204,18 @@ const RegistrationForm = () => {
         inputStyle={{
           width: '100%',
           padding: '10px 10px 10px 45px',
-          border: `1.5px solid ${focusedInput === name ? 'white' : '#3d3e6b'}`,
+          border: `1.25px solid ${focusedInput === name ? 'white' : '#3d3e6b'}`,
           borderRadius: '4px',
           background: '#2a2b55',
           color: 'white',
-          height: '48px',
+          height: '42px',
           transition: 'border 0.3s',
         }}
         buttonStyle={{
           background: '#bdc2d2',
           border: 'none',
           borderRadius: '4px 0px 0px 4px',
-          height: '48px',
+          height: '42px',
         }}
         placeholder={placeholder}
       />
