@@ -10,15 +10,15 @@ const RegistrationForm = () => {
     leaderName: '',
     leaderId: '',
     leaderEmail: '',
-    leaderWhatsapp: '',
+    leaderWhatsappNumber: '', // Updated here
     mem1Name: '',
     mem1Id: '',
     mem1Email: '',
-    mem1Whatsapp: '',
+    mem1WhatsappNumber: '', // Updated here
     mem2Name: '',
     mem2Id: '',
     mem2Email: '',
-    mem2Whatsapp: '',
+    mem2WhatsappNumber: '', // Updated here
   });
 
   const [errors, setErrors] = useState({});
@@ -32,15 +32,15 @@ const RegistrationForm = () => {
     leaderName: 'Leader Name',
     leaderId: 'Leader ID',
     leaderEmail: 'Leader NU Email',
-    leaderWhatsapp: 'Leader WhatsApp Number',
+    leaderWhatsappNumber: 'Leader WhatsApp Number', // Updated here
     mem1Name: 'Member 1 Name',
     mem1Id: 'Member 1 ID',
     mem1Email: 'Member 1 NU Email',
-    mem1Whatsapp: 'Member 1 WhatsApp Number',
+    mem1WhatsappNumber: 'Member 1 WhatsApp Number', // Updated here
     mem2Name: 'Member 2 Name (optional)',
     mem2Id: 'Member 2 ID (optional)',
     mem2Email: 'Member 2 NU Email (optional)',
-    mem2Whatsapp: 'Member 2 WhatsApp Number (optional)',
+    mem2WhatsappNumber: 'Member 2 WhatsApp Number (optional)', // Updated here
   };
 
   const validateField = (name, value) => {
@@ -64,10 +64,10 @@ const RegistrationForm = () => {
         if (!value && name !== 'mem2Email') return `${fieldLabels[name]} is required.`;
         if (value && !/^[a-zA-Z]\d{6}@nu\.edu\.pk$/.test(value)) return 'Invalid email format.';
         return '';
-      case 'leaderWhatsapp':
-      case 'mem1Whatsapp':
-      case 'mem2Whatsapp':
-        if (!value && name !== 'mem2Whatsapp') return `${fieldLabels[name]} is required.`;
+      case 'leaderWhatsappNumber': // Updated here
+      case 'mem1WhatsappNumber': // Updated here
+      case 'mem2WhatsappNumber': // Updated here
+        if (!value && name !== 'mem2WhatsappNumber') return `${fieldLabels[name]} is required.`;
         return ''; // Phone validation handled by the library
       default:
         return '';
@@ -130,10 +130,10 @@ const RegistrationForm = () => {
 
     // Check if Member 2 details are partially filled
     const isMem2PartiallyFilled = 
-      (formData.mem2Name && (!formData.mem2Id || !formData.mem2Email || !formData.mem2Whatsapp)) ||
-      (formData.mem2Id && (!formData.mem2Name || !formData.mem2Email || !formData.mem2Whatsapp)) ||
-      (formData.mem2Email && (!formData.mem2Name || !formData.mem2Id || !formData.mem2Whatsapp)) ||
-      (formData.mem2Whatsapp && (!formData.mem2Name || !formData.mem2Id || !formData.mem2Email));
+      (formData.mem2Name && (!formData.mem2Id || !formData.mem2Email || !formData.mem2WhatsappNumber)) || // Updated here
+      (formData.mem2Id && (!formData.mem2Name || !formData.mem2Email || !formData.mem2WhatsappNumber)) || // Updated here
+      (formData.mem2Email && (!formData.mem2Name || !formData.mem2Id || !formData.mem2WhatsappNumber)) || // Updated here
+      (formData.mem2WhatsappNumber && (!formData.mem2Name || !formData.mem2Id || !formData.mem2Email)); // Updated here
 
     if (isMem2PartiallyFilled) {
       const confirmDiscard = window.confirm("Member 2 details are incomplete. Do you want to discard these partial details?");
@@ -146,7 +146,7 @@ const RegistrationForm = () => {
           mem2Name: '',
           mem2Id: '',
           mem2Email: '',
-          mem2Whatsapp: '',
+          mem2WhatsappNumber: '', // Updated here
         }));
       }
     }
@@ -175,15 +175,15 @@ const RegistrationForm = () => {
           leaderName: '',
           leaderId: '',
           leaderEmail: '',
-          leaderWhatsapp: '',
+          leaderWhatsappNumber: '', // Updated here
           mem1Name: '',
           mem1Id: '',
           mem1Email: '',
-          mem1Whatsapp: '',
+          mem1WhatsappNumber: '', // Updated here
           mem2Name: '',
           mem2Id: '',
           mem2Email: '',
-          mem2Whatsapp: '',
+          mem2WhatsappNumber: '', // Updated here
         });
       } catch (error) {
         console.error('Error submitting form:', error);
@@ -270,15 +270,15 @@ const RegistrationForm = () => {
               {renderField('leaderName', fieldLabels.leaderName, 'e.g. Sheldon Cooper')}
               {renderField('leaderId', fieldLabels.leaderId, 'e.g. 22K-1234')}
               {renderField('leaderEmail', fieldLabels.leaderEmail, 'e.g. k221234@nu.edu.pk', 'email')}
-              {renderPhoneField('leaderWhatsapp', fieldLabels.leaderWhatsapp, 'e.g. +92 312 0000000')}
+              {renderPhoneField('leaderWhatsappNumber', fieldLabels.leaderWhatsappNumber, 'e.g. +92 312 0000000')}
               {renderField('mem1Name', fieldLabels.mem1Name, 'e.g. Leonard Hofstadter')}
               {renderField('mem1Id', fieldLabels.mem1Id, 'e.g. 22P-5678')}
               {renderField('mem1Email', fieldLabels.mem1Email, 'e.g. p224567@nu.edu.pk', 'email')}
-              {renderPhoneField('mem1Whatsapp', fieldLabels.mem1Whatsapp, 'e.g. +92 313 0000000')}
+              {renderPhoneField('mem1WhatsappNumber', fieldLabels.mem1WhatsappNumber, 'e.g. +92 313 0000000')}
               {renderField('mem2Name', fieldLabels.mem2Name, 'e.g. Howard Wolowitz', 'text', false)}
               {renderField('mem2Id', fieldLabels.mem2Id, 'e.g. 22L-1234', 'text', false)}
               {renderField('mem2Email', fieldLabels.mem2Email, 'e.g. l221234@nu.edu.pk', 'email', false)}
-              {renderPhoneField('mem2Whatsapp', fieldLabels.mem2Whatsapp, 'e.g. +92 314 0000000', false)}
+              {renderPhoneField('mem2WhatsappNumber', fieldLabels.mem2WhatsappNumber, 'e.g. +92 314 0000000', false)}
 
               <div className="col-span-1 sm:col-span-2">
                 <button 
