@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
+import axios from 'axios';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -30,15 +31,15 @@ const RegistrationForm = () => {
     teamVjudgeUsername: "Team's Vjudge Username",
     leaderName: 'Leader Name',
     leaderId: 'Leader ID',
-    leaderEmail: 'Leader NU Email', // Updated label
+    leaderEmail: 'Leader NU Email',
     leaderWhatsapp: 'Leader WhatsApp Number',
     mem1Name: 'Member 1 Name',
     mem1Id: 'Member 1 ID',
-    mem1Email: 'Member 1 NU Email', // Updated label
+    mem1Email: 'Member 1 NU Email',
     mem1Whatsapp: 'Member 1 WhatsApp Number',
     mem2Name: 'Member 2 Name (optional)',
     mem2Id: 'Member 2 ID (optional)',
-    mem2Email: 'Member 2 NU Email (optional)', // Updated label
+    mem2Email: 'Member 2 NU Email (optional)',
     mem2Whatsapp: 'Member 2 WhatsApp Number (optional)',
   };
 
@@ -154,21 +155,51 @@ const RegistrationForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     if (validateForm()) {
       try {
-        // Simulating API call
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        console.log('Form values:', formData);
+        const response = await axios.post(`${apiUrl}/register`, formData);
+        
+        // Handle successful response
+        console.log('Response:', response.data);
         setSuccessMessage('Registration successful! Thank you for registering.');
+        
+        // Optionally, reset the form after successful submission
+        setFormData({
+          teamName: '',
+          teamVjudgeUsername: '',
+          leaderName: '',
+          leaderId: '',
+          leaderEmail: '',
+          leaderWhatsapp: '',
+          mem1Name: '',
+          mem1Id: '',
+          mem1Email: '',
+          mem1Whatsapp: '',
+          mem2Name: '',
+          mem2Id: '',
+          mem2Email: '',
+          mem2Whatsapp: '',
+        });
       } catch (error) {
         console.error('Error submitting form:', error);
-        setErrors(prevErrors => ({
-          ...prevErrors,
-          _errors: [...(prevErrors._errors || []), 'An error occurred while submitting the form.']
-        }));
+        
+        // Check for backend error messages
+        if (error.response && error.response.data.message) {
+          setErrors(prevErrors => ({
+            ...prevErrors,
+            _errors: [...(prevErrors._errors || []), error.response.data.message],
+          }));
+        } else {
+          setErrors(prevErrors => ({
+            ...prevErrors,
+            _errors: [...(prevErrors._errors || []), 'An error occurred while submitting the form.']
+          }));
+        }
       }
     }
     setIsSubmitting(false);
