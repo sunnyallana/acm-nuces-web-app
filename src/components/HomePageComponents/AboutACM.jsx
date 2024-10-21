@@ -47,10 +47,8 @@ export default function AboutACM() {
             <h1 className="text-center font-bold text-4xl md:text-7xl bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text">
                 ABOUT <span className="text-[#17A0B7]">ACM</span>
             </h1>
-                <p className='text-center font-extralight text-sm w-10/12 md:w-7/12 mb-20 mt-20'>
-                    More than 75 successful projects, more than 250 satisfied clients. Join us on
-                    this creative journey with many success stories and see how we bring
-                    companies and businesses to life.
+                <p className='text-left font-extralight text-sm w-10/12 md:w-7/12 mb-20 mt-20'>
+                The Association for Computing Machinery (ACM) is the world’s largest computing society. Our FAST University chapter cultivates a vibrant community of tech enthusiasts. We empower students through events like Coders Cup, workshops, and mentorship, fostering growth and real-world innovation.
                 </p>
 
                 {/* Cards Section */}
