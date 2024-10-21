@@ -14,7 +14,7 @@ export default function Header() {
   };
 
   return (
-    <div className="mt-32">
+    <div className="mt-32 z-10">
       <div className="flex flex-col-reverse sm:flex-row items-center text-white mx-auto w-[85%]">
         <div className="sm:w-[50%] md:w-[47%] sm:border-l-4 border-white sm:px-3 pt-6 text-center sm:text-start"> {/* Increased padding-top */}
           <p className="uppercase text-[40px] 2xl:text-[80px] font-bold mb-3 sm:mb-2 xl:mb-3 xl:text-[55px] lg:text-[40px] md:text-[28px] sm:text-[25px] bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text">
