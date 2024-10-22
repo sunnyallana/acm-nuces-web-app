@@ -9,6 +9,12 @@ const requestApi = axios.create({
   baseURL: apiUrl,
 });
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
+const requestApi = axios.create({
+  baseURL: apiUrl,
+});
+
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     teamName: '',
