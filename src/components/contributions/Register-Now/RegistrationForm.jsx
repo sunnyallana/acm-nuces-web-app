@@ -3,6 +3,12 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import axios from 'axios';
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
+const requestApi = axios.create({
+  baseURL: apiUrl,
+});
+
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     teamName: '',
@@ -155,14 +161,12 @@ const RegistrationForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const apiUrl = process.env.REACT_APP_API_URL;
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     if (validateForm()) {
       try {
-        const response = await axios.post(`${apiUrl}/register`, formData);
+        const response = await requestApi.post(`/register`, formData);
         
         // Handle successful response
         console.log('Response:', response.data);
