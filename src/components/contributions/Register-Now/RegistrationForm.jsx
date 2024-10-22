@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import axios from 'axios';
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -190,9 +192,21 @@ const RegistrationForm = () => {
 
         const response = await requestApi.post(`/register`, submissionData);
         console.log('Response:', response.data);
-        setSuccessMessage('Registration successful! Thank you for registering.');
+        
+        // Show success toast
+        toast.success(response.data.message || 'Registration successful! 🎉', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
 
-        // Optionally, reset the form after successful submission
+        // Reset form after successful submission
         setFormData({
           teamName: '',
           vjudgeUsername: '',
@@ -209,19 +223,101 @@ const RegistrationForm = () => {
           mem2Email: '',
           mem2WhatsappNumber: '',
         });
+        setErrors({});
       } catch (error) {
         console.error('Error submitting form:', error);
-        if (error.response && error.response.data.message) {
-          setErrors(prevErrors => ({
-            ...prevErrors,
-            _errors: [...(prevErrors._errors || []), error.response.data.message],
-          }));
+        
+        // Handle different error types based on status codes
+        if (error.response) {
+          switch (error.response.status) {
+            case 400:
+              // Handle validation errors
+              if (error.response.data.errors) {
+                error.response.data.errors.forEach(err => {
+                  toast.error(err, {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Bounce,
+                  });
+                });
+              } else {
+                toast.error(error.response.data.message || 'Invalid input data 😕', {
+                  position: "top-right",
+                  autoClose: 5000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "dark",
+                  transition: Bounce,
+                });
+              }
+              break;
+            case 409:
+              // Handle conflict errors
+              toast.error(error.response.data.message || 'Team already exists! 🧐', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+              });
+              break;
+            default:
+              // Handle other errors
+              toast.error(error.response.data.message || 'An error occurred while submitting the form 😕', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+              });
+          }
         } else {
-          setErrors(prevErrors => ({
-            ...prevErrors,
-            _errors: [...(prevErrors._errors || []), 'An error occurred while submitting the form.']
-          }));
+          toast.error('Network error occurred. Please try again later 😕', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
+          });
         }
+      }
+    } else {
+      // Show validation errors in toast
+      if (errors._errors) {
+        errors._errors.forEach(error => {
+          toast.error(error, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
+          });
+        });
       }
     }
     setIsSubmitting(false);
@@ -278,6 +374,7 @@ const RegistrationForm = () => {
 
   return (
     <>
+    <ToastContainer />
       <h1 className="text-white text-center text-[34px] 2xl:text-[80px] xl:text-[66px] lg:text-[55px] md:text-[40px] sm:text-[30px] font-bold py-2 px-2 mb-12 mt-24">
         <span className="bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text">
           REGISTER HERE
