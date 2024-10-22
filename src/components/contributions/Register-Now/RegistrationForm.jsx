@@ -3,22 +3,28 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import axios from 'axios';
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
+const requestApi = axios.create({
+  baseURL: apiUrl,
+});
+
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     teamName: '',
-    teamVjudgeUsername: '',
+    vjudgeUsername: '',
     leaderName: '',
     leaderId: '',
     leaderEmail: '',
-    leaderWhatsappNumber: '', // Updated here
+    leaderWhatsappNumber: '',
     mem1Name: '',
     mem1Id: '',
     mem1Email: '',
-    mem1WhatsappNumber: '', // Updated here
+    mem1WhatsappNumber: '',
     mem2Name: '',
     mem2Id: '',
     mem2Email: '',
-    mem2WhatsappNumber: '', // Updated here
+    mem2WhatsappNumber: '',
   });
 
   const [errors, setErrors] = useState({});
@@ -28,25 +34,25 @@ const RegistrationForm = () => {
 
   const fieldLabels = {
     teamName: 'Team Name',
-    teamVjudgeUsername: "Team's Vjudge Username",
+    vjudgeUsername: "Vjudge Username",
     leaderName: 'Leader Name',
     leaderId: 'Leader ID',
     leaderEmail: 'Leader NU Email',
-    leaderWhatsappNumber: 'Leader WhatsApp Number', // Updated here
+    leaderWhatsappNumber: 'Leader WhatsApp Number',
     mem1Name: 'Member 1 Name',
     mem1Id: 'Member 1 ID',
     mem1Email: 'Member 1 NU Email',
-    mem1WhatsappNumber: 'Member 1 WhatsApp Number', // Updated here
+    mem1WhatsappNumber: 'Member 1 WhatsApp Number',
     mem2Name: 'Member 2 Name (optional)',
     mem2Id: 'Member 2 ID (optional)',
     mem2Email: 'Member 2 NU Email (optional)',
-    mem2WhatsappNumber: 'Member 2 WhatsApp Number (optional)', // Updated here
+    mem2WhatsappNumber: 'Member 2 WhatsApp Number (optional)',
   };
 
   const validateField = (name, value) => {
     switch (name) {
       case 'teamName':
-      case 'teamVjudgeUsername':
+      case 'vjudgeUsername':
       case 'leaderName':
       case 'mem1Name':
         return value ? '' : `${fieldLabels[name]} is required.`;
@@ -64,11 +70,11 @@ const RegistrationForm = () => {
         if (!value && name !== 'mem2Email') return `${fieldLabels[name]} is required.`;
         if (value && !/^[a-zA-Z]\d{6}@nu\.edu\.pk$/.test(value)) return 'Invalid email format.';
         return '';
-      case 'leaderWhatsappNumber': // Updated here
-      case 'mem1WhatsappNumber': // Updated here
-      case 'mem2WhatsappNumber': // Updated here
+      case 'leaderWhatsappNumber':
+      case 'mem1WhatsappNumber':
+      case 'mem2WhatsappNumber':
         if (!value && name !== 'mem2WhatsappNumber') return `${fieldLabels[name]} is required.`;
-        return ''; // Phone validation handled by the library
+        return '';
       default:
         return '';
     }
@@ -77,15 +83,27 @@ const RegistrationForm = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     let newValue = value;
-
+  
     // Capitalize the letter after the first two digits for ID fields
     if (['leaderId', 'mem1Id', 'mem2Id'].includes(name) && value.length >= 3) {
       newValue = value.slice(0, 2) + value.charAt(2).toUpperCase() + value.slice(3);
     }
-
+  
+    // Limit ID length to 8 characters
+    if (['leaderId', 'mem1Id', 'mem2Id'].includes(name) && value.length > 8) {
+      newValue = value.slice(0, 8);
+    }
+  
     setFormData(prevData => ({ ...prevData, [name]: newValue }));
     setErrors(prevErrors => ({ ...prevErrors, [name]: validateField(name, newValue) }));
+  
+    // Auto-fill email domain if prefix is 7 characters
+    if (name.endsWith('Email') && value.length >= 7) {
+      const prefix = value.slice(0, 7); // Get the first 7 characters
+      setFormData(prevData => ({ ...prevData, [name]: `${prefix}@nu.edu.pk` }));
+    }
   };
+  
 
   const handlePhoneChange = (name, value) => {
     setFormData(prevData => ({ ...prevData, [name]: value }));
@@ -130,10 +148,10 @@ const RegistrationForm = () => {
 
     // Check if Member 2 details are partially filled
     const isMem2PartiallyFilled = 
-      (formData.mem2Name && (!formData.mem2Id || !formData.mem2Email || !formData.mem2WhatsappNumber)) || // Updated here
-      (formData.mem2Id && (!formData.mem2Name || !formData.mem2Email || !formData.mem2WhatsappNumber)) || // Updated here
-      (formData.mem2Email && (!formData.mem2Name || !formData.mem2Id || !formData.mem2WhatsappNumber)) || // Updated here
-      (formData.mem2WhatsappNumber && (!formData.mem2Name || !formData.mem2Id || !formData.mem2Email)); // Updated here
+      (formData.mem2Name && (!formData.mem2Id || !formData.mem2Email || !formData.mem2WhatsappNumber)) ||
+      (formData.mem2Id && (!formData.mem2Name || !formData.mem2Email || !formData.mem2WhatsappNumber)) ||
+      (formData.mem2Email && (!formData.mem2Name || !formData.mem2Id || !formData.mem2WhatsappNumber)) ||
+      (formData.mem2WhatsappNumber && (!formData.mem2Name || !formData.mem2Id || !formData.mem2Email));
 
     if (isMem2PartiallyFilled) {
       const confirmDiscard = window.confirm("Member 2 details are incomplete. Do you want to discard these partial details?");
@@ -146,7 +164,7 @@ const RegistrationForm = () => {
           mem2Name: '',
           mem2Id: '',
           mem2Email: '',
-          mem2WhatsappNumber: '', // Updated here
+          mem2WhatsappNumber: '',
         }));
       }
     }
@@ -154,41 +172,45 @@ const RegistrationForm = () => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
-  const apiUrl = process.env.REACT_APP_API_URL;
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    console.log('Submitting form:', formData);
     if (validateForm()) {
       try {
-        const response = await axios.post(`${apiUrl}/register`, formData);
-        
-        // Handle successful response
+        const submissionData = { ...formData };
+        // Omit Member 2 details if they're empty
+        if (!formData.mem2Name) {
+          delete submissionData.mem2Name;
+          delete submissionData.mem2Id;
+          delete submissionData.mem2Email;
+          delete submissionData.mem2WhatsappNumber;
+        }
+
+        const response = await requestApi.post(`/register`, submissionData);
         console.log('Response:', response.data);
         setSuccessMessage('Registration successful! Thank you for registering.');
-        
+
         // Optionally, reset the form after successful submission
         setFormData({
           teamName: '',
-          teamVjudgeUsername: '',
+          vjudgeUsername: '',
           leaderName: '',
           leaderId: '',
           leaderEmail: '',
-          leaderWhatsappNumber: '', // Updated here
+          leaderWhatsappNumber: '',
           mem1Name: '',
           mem1Id: '',
           mem1Email: '',
-          mem1WhatsappNumber: '', // Updated here
+          mem1WhatsappNumber: '',
           mem2Name: '',
           mem2Id: '',
           mem2Email: '',
-          mem2WhatsappNumber: '', // Updated here
+          mem2WhatsappNumber: '',
         });
       } catch (error) {
         console.error('Error submitting form:', error);
-        
-        // Check for backend error messages
         if (error.response && error.response.data.message) {
           setErrors(prevErrors => ({
             ...prevErrors,
@@ -266,7 +288,7 @@ const RegistrationForm = () => {
           <div className="bg-[#23244e] rounded-2xl shadow-md p-4 sm:p-6">
             <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {renderField('teamName', fieldLabels.teamName, 'e.g. Team Caltech', 'text', true, true)}
-              {renderField('teamVjudgeUsername', fieldLabels.teamVjudgeUsername, 'e.g. caltech_team', 'text', true, true)}
+              {renderField('vjudgeUsername', fieldLabels.vjudgeUsername, 'e.g. caltech_team', 'text', true, true)}
               {renderField('leaderName', fieldLabels.leaderName, 'e.g. Sheldon Cooper')}
               {renderField('leaderId', fieldLabels.leaderId, 'e.g. 22K-1234')}
               {renderField('leaderEmail', fieldLabels.leaderEmail, 'e.g. k221234@nu.edu.pk', 'email')}
@@ -281,7 +303,7 @@ const RegistrationForm = () => {
               {renderPhoneField('mem2WhatsappNumber', fieldLabels.mem2WhatsappNumber, 'e.g. +92 314 0000000', false)}
 
               <div className="col-span-1 sm:col-span-2">
-                <button 
+                <button   
                   type="submit" 
                   disabled={isSubmitting}
                   className="w-full bg-[#0f5ea3] hover:bg-blue-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
