@@ -14,6 +14,9 @@ export default function Rules() {
         <div className="flex justify-center items-center max-w-[93%] sm:max-w-[92%] md:max-w-[85%] bg-[#FDFDFD1C] mx-auto rounded-2xl border border-[#FFFFFF]">
           <ul className="text-white w-[87%] my-8 text-left list-disc text-[15px] sm:text-[14px] md:text-[15px] xl:text-[18px] 2xl:text-[25px] 2xl:ml-5 xl:ml-8 ml-5">
             <li className="mb-4">
+              Teams must use the same Vjudge account as provided during registration for the competition.
+            </li>
+            <li className="mb-4">
               Internet access is only allowed for code submission via Vjudge.
             </li>
             <li className="mb-4">

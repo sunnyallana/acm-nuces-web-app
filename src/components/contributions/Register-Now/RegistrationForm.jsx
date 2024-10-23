@@ -82,6 +82,7 @@ const RegistrationForm = () => {
     }
   };
 
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     let newValue = value;
@@ -98,6 +99,21 @@ const RegistrationForm = () => {
   
     setFormData(prevData => ({ ...prevData, [name]: newValue }));
     setErrors(prevErrors => ({ ...prevErrors, [name]: validateField(name, newValue) }));
+  
+    // Display warning for Vjudge Username
+    if (name === 'vjudgeUsername') {
+      toast.warn('Please enter the same Vjudge username you will use in the competition.', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
+    }
   };
   
   
