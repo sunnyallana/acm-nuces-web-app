@@ -10,7 +10,6 @@ const SponsorComp = () => {
             <h1 className="text-center font-bold text-4xl md:text-7xl bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text">
               OUR <span className="text-[#17A0B7]">PARTNERS</span>
             </h1>
-            <p className='md:w-6/12 text-3xl text-center text-white'>Interesting in <span className='font-bold'>Sponsoring</span> us? Contact us now</p>
         </div>
         {/* <GoldSponsor/> */}
         <PremiumSponsor/>
