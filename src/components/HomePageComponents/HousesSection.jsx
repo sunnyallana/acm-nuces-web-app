@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Player from "../../assets/images/houses/player.png";
-import RealMadridPlayer from "../../assets/images/houses/real-madrid-player.png";
-import ManchestorPlayer from "../../assets/images/houses/manchestor-player.png";
-import BarcelonaPlayer from "../../assets/images/houses/barcelona-player.webp";
-import ArsenalPlayer from "../../assets/images/houses/arsenal-player.png";
+import Player from "../../assets/images/houses/ronaldo.png";
+import RealMadridPlayer from "../../assets/images/houses/ronaldo.png";
+import ManchestorPlayer from "../../assets/images/houses/Rooney.png";
+import BarcelonaPlayer from "../../assets/images/houses/Messi.png";
+import ArsenalPlayer from "../../assets/images/houses/Ozil.png";
 import RealMadrid from "../../assets/images/houses/real-madrid.png";
 import Manchestor from "../../assets/images/houses/manchestor.png";
 import Barcelona from "../../assets/images/houses/barcelona.png";
@@ -11,12 +11,10 @@ import Arsenal from "../../assets/images/houses/arsenal.png";
 import Background from "../../assets/images/houses/bg.png";
 
 const HousesSection = () => {
-  
   const [currentPlayer, setCurrentPlayer] = useState(Player);
 
+  // Handle player image change on hover
   const handleHover = (playerImage) => setCurrentPlayer(playerImage);
-
-  const handleMouseLeave = () => setCurrentPlayer(Player);
 
   return (
     <div className="relative flex flex-col justify-center items-center gap-y-4 p-8 min-h-screen overflow-hidden">
@@ -29,7 +27,7 @@ const HousesSection = () => {
       </div>
 
       {/* Title Section */}
-      <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold z-10">
+      <h1 className="text-white text-center text-4xl md:text-5xl lg:text-6xl font-bold z-10">
         HOUSES DETAILS
       </h1>
 
@@ -43,7 +41,6 @@ const HousesSection = () => {
             name="GALACTICOS"
             description="Precision, skill, and unmatched excellence."
             handleHover={handleHover}
-            handleMouseLeave={handleMouseLeave}
           />
           <ClubCard
             image={Arsenal}
@@ -51,7 +48,6 @@ const HousesSection = () => {
             name="GUNNERS"
             description="Creativity, innovation, and outside-the-box thinking."
             handleHover={handleHover}
-            handleMouseLeave={handleMouseLeave}
           />
         </div>
 
@@ -68,7 +64,6 @@ const HousesSection = () => {
             name="RED DEVILS"
             description="Resilience, teamwork, and relentless drive."
             handleHover={handleHover}
-            handleMouseLeave={handleMouseLeave}
           />
           <ClubCard
             image={Barcelona}
@@ -76,7 +71,6 @@ const HousesSection = () => {
             name="CULERS"
             description="Collaboration and technical finesse at their finest."
             handleHover={handleHover}
-            handleMouseLeave={handleMouseLeave}
           />
         </div>
       </div>
@@ -84,11 +78,10 @@ const HousesSection = () => {
   );
 };
 
-const ClubCard = ({ image, playerImage, name, description, handleHover, handleMouseLeave }) => (
+const ClubCard = ({ image, playerImage, name, description, handleHover }) => (
   <div
     className="card justify-center items-center flex flex-col gap-y-4 p-8 cursor-pointer"
     onMouseEnter={() => handleHover(playerImage)}
-    onMouseLeave={handleMouseLeave}
   >
     <img src={image} alt={name} className="w-48 md:w-64" />
     <p className="text-white text-sm md:text-base text-center">
