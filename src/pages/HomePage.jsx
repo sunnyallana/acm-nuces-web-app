@@ -11,8 +11,8 @@ export default function HomePage(){
             <HeroSection />
             <AboutCodersCup/>
             <AboutACM/>
-            <HousesSection/>
             <SponsorComp/>
+            <HousesSection/>
             <CodersCupBanner/>
         </div>
     )

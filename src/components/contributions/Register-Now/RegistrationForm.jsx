@@ -33,6 +33,7 @@ const RegistrationForm = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [focusedInput, setFocusedInput] = useState('');
+  const [vjudgeUsernameWarning, setVjudgeUsernameWarning] = useState(false);
 
   const fieldLabels = {
     teamName: 'Team Name',
@@ -101,7 +102,7 @@ const RegistrationForm = () => {
     setErrors(prevErrors => ({ ...prevErrors, [name]: validateField(name, newValue) }));
   
     // Display warning for Vjudge Username
-    if (name === 'vjudgeUsername') {
+    if (name === 'vjudgeUsername' && !vjudgeUsernameWarning) {
       toast.warn('Please enter the same Vjudge username you will use in the competition.', {
         position: "top-right",
         autoClose: 5000,
@@ -113,6 +114,7 @@ const RegistrationForm = () => {
         theme: "dark",
         transition: Bounce,
       });
+      setVjudgeUsernameWarning(true);
     }
   };
   
