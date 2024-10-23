@@ -7,12 +7,12 @@ const SponsorComp = () => {
   return (
     <div className='flex flex-col justify-center items-center w-[100%] gap-y-12 py-12'>
         <div className='flex flex-col justify-center items-center w-[100%] gap-y-4 py-16'>
-            <h1 className="fira-code text-[#FFFFFF] text-6xl">
-                <span className="text-[#17A0B7]">SPONSORS</span>
+            <h1 className="text-center font-bold text-4xl md:text-7xl bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text">
+              OUR <span className="text-[#17A0B7]">PARTNERS</span>
             </h1>
-            <p className='md:w-6/12 text-3xl text-center text-white'>Interesting in <span className='font-bold'>Sponsoring?</span> Contact us</p>
+            <p className='md:w-6/12 text-3xl text-center text-white'>Interesting in <span className='font-bold'>Sponsoring</span> us? Contact us now</p>
         </div>
-        <GoldSponsor/>
+        {/* <GoldSponsor/> */}
         <PremiumSponsor/>
     </div>
   )

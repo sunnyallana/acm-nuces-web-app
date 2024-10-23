@@ -18,12 +18,10 @@ export default function Header() {
       <div className="flex flex-col-reverse sm:flex-row items-center text-white mx-auto w-[85%]">
         <div className="sm:w-[50%] md:w-[47%] sm:border-l-4 border-white sm:px-3 pt-6 text-center sm:text-start"> {/* Increased padding-top */}
           <p className="uppercase text-[40px] 2xl:text-[80px] font-bold mb-3 sm:mb-2 xl:mb-3 xl:text-[55px] lg:text-[40px] md:text-[28px] sm:text-[25px] bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text">
-            ANY HEADING
+            JOIN US
           </p>
           <p className="md:mt-1 sm:mt-1 uppercase text-[14px] 2xl:text-2xl xl:text-[17px] lg:text-[14px] md:text-[12px] sm:text-[11px]">
-            orem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua ment
-            text and icons.
+              DON'T MISS OUT ON THE EXCITEMENT! SIGN UP NOW TO RESERVE YOUR PLACE AT THIS AMAZING EVENT!
           </p>
 
           <button
