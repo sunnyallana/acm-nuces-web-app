@@ -22,9 +22,7 @@ export default function Header() {
         </p>
 
           <p className="md:mt-1 sm:mt-1 uppercase text-[14px] 2xl:text-2xl xl:text-[17px] lg:text-[14px] md:text-[12px] sm:text-[11px]">
-            orem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua ment
-            text and icons.
+            DON'T MISS OUT ON THE EXCITEMENT! SIGN UP NOW TO RESERVE YOUR PLACE AT THIS AMAZING EVENT!
           </p>
 
           <button
