@@ -98,13 +98,8 @@ const RegistrationForm = () => {
   
     setFormData(prevData => ({ ...prevData, [name]: newValue }));
     setErrors(prevErrors => ({ ...prevErrors, [name]: validateField(name, newValue) }));
-  
-    // Auto-fill email domain if prefix is 7 characters
-    if (name.endsWith('Email') && value.length >= 7) {
-      const prefix = value.slice(0, 7); // Get the first 7 characters
-      setFormData(prevData => ({ ...prevData, [name]: `${prefix}@nu.edu.pk` }));
-    }
   };
+  
   
 
   const handlePhoneChange = (name, value) => {
