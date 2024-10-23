@@ -1,104 +1,76 @@
-import aboutBg from '../../assets/images/backgrounds/about-acm-bg.png';
-import item1Logo from '../../assets/images/item-1.png';
+import React from 'react';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css/sea-green'; 
 
-export default function AboutACM() {
-    const aboutItems = [
-        {
-            logo: item1Logo,
-            title: 'Success Ratio',
-            year: '2024',
-            detail: ["Branding", "Web Design", "Social Media"]
-        },
-        {
-            logo: item1Logo,
-            title: 'Success Ratio',
-            year: '2024',
-            detail: ["Branding", "Web Design", "Social Media"]
-        },
-        {
-            logo: item1Logo,
-            title: 'Success Ratio',
-            year: '2024',
-            detail: ["Branding", "Web Design", "Social Media"]
-        },
-        {
-            logo: item1Logo,
-            title: 'Success Ratio',
-            year: '2024',
-            detail: ["Branding", "Web Design", "Social Media"]
-        }
-    ];
 
-    const firstColItems = [];
-    const secondColItems = [];
+import event1 from "../../assets/images/events/event1.jpg";
+import event2 from '../../assets/images/events/event2.jpg';
+import event3 from '../../assets/images/events/event3.jpg';
+import event4 from '../../assets/images/events/event4.jpg';
+import event5 from '../../assets/images/events/event5.jpg';
+import event6 from '../../assets/images/events/event6.jpg';
+import event7 from '../../assets/images/events/event7.jpg';
+import event8 from '../../assets/images/events/event8.jpg';
+import event9 from '../../assets/images/events/event9.jpg';
+import event10 from '../../assets/images/events/event10.jpg';
+import event11 from '../../assets/images/events/event11.jpg';
+import event12 from '../../assets/images/events/event12.jpg';
+import event13 from '../../assets/images/events/event13.jpg';
+import event14 from '../../assets/images/events/event14.jpg';
+import event15 from '../../assets/images/events/event15.jpg';
+import event16 from '../../assets/images/events/event16.jpg';
+import event17 from '../../assets/images/events/event17.jpg';
+import event18 from '../../assets/images/events/event18.jpeg';
+import event19 from '../../assets/images/events/event19.jpg';
+import event20 from '../../assets/images/events/event20.jpg';
+import event21 from '../../assets/images/events/event21.jpg';
+import event22 from '../../assets/images/events/event22.jpg';
+import event23 from '../../assets/images/events/event23.jpg';
 
-    aboutItems.forEach((item, index) => {
-        if (index % 2 === 0) {
-            firstColItems.push(item);
-        } else {
-            secondColItems.push(item);
-        }
-    });
+// Store images in an array
+const eventImages = [
+  event1, event2, event3, event4, event5, event6, event7, event8,
+  event9, event10, event11, event12, event13, event14, event15,
+  event16, event17, event18, event19, event20, event21, event22, event23
+];
 
-    return (
-        <div className='bg-cover flex flex-col md:flex-row text-white justify-center mt-10 py-20' style={{ backgroundImage: `url(${aboutBg})` }}>
-            {/* First column */}
-            <div className='flex flex-col items-center justify-center w-full md:w-6/12 pt-10'>
-            <h1 className="text-center font-bold text-4xl md:text-7xl bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text">
-                ABOUT <span className="text-[#17A0B7]">ACM</span>
-            </h1>
-                <p className='text-left font-extralight text-sm w-10/12 md:w-7/12 mb-20 mt-20'>
-                The Association for Computing Machinery (ACM) is the world’s largest computing society. Our FAST University chapter cultivates a vibrant community of tech enthusiasts. We empower students through events like Coders Cup, workshops, and mentorship, fostering growth and real-world innovation.
-                </p>
+const AboutACM = () => {
+  return (
+    <div className="bg-transparent text-white p-6">
+      {/* Heading */}
+      <h1 className="text-center text-3xl md:text-7xl font-bold py-6 px-2 mb-6 bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text">
+      HISTORY OF <span className="text-[#17A0B7]">CODERS CUP</span>
+      </h1>
 
-                {/* Cards Section */}
-                <div className='flex flex-col items-center justify-center w-full gap-8'>
-                    {firstColItems.map((item, index) => {
-                        const marginClass = (index === 1) ? 'mb-8' : 'mb-4'; // 8 margin for 2nd card, 4 for others
-                        return (
-                            <div key={index} className={`w-10/12 md:w-8/12 p-6 bg-[#fdfdfd1c] bg-opacity-60 flex flex-col gap-4 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 ${marginClass}`}>
-                                <img className='w-full h-40 object-cover rounded-t-lg' src={item.logo} alt={item.title} />
-                                <div className='flex flex-row justify-between font-semibold text-lg'>
-                                    <h3>{item.title}</h3>
-                                    <p>{item.year}</p>
-                                </div>
-                                <ul className='flex flex-row gap-4 flex-wrap justify-center'>
-                                    {item.detail.map((detailItem, detailIndex) => (
-                                        <li className='border border-white rounded-full px-3 py-1 text-sm' key={detailIndex}>
-                                            {detailItem}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        );
-                    })}
-                </div>
-            </div>
+      {/* Description */}
+      <p className="text-center text-lg md:text-xl mb-10 px-4 md:px-20">
+      Over the years, the event has grown in scale, attracting talented participants. Coder's Cup not only nurtures technical excellence but also encourages collaboration and teamwork, establishing itself as a prestigious platform for budding coders.
+      </p>
 
-            {/* Second column */}
-            <div className='flex flex-col items-center justify-center w-full md:w-6/12'>
-                <div className='flex flex-col items-center justify-center w-full gap-8'>
-                    {secondColItems.map((item, index) => {
-                        const marginClass = (index === 1) ? 'mb-8' : 'mb-4'; // 8 margin for 2nd card, 4 for others
-                        return (
-                            <div key={index} className={`w-10/12 md:w-8/12 p-6 bg-[#fdfdfd1c] bg-opacity-60 flex flex-col gap-4 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 ${marginClass}`}>
-                                <img className='w-full h-40 object-cover rounded-t-lg' src={item.logo} alt={item.title} />
-                                <div className='flex flex-row justify-between font-semibold text-lg'>
-                                    <h3>{item.title}</h3>
-                                    <p>{item.year}</p>
-                                </div>
-                                <ul className='flex flex-row gap-4 flex-wrap justify-center'>
-                                    {item.detail.map((detailItem, detailIndex) => (
-                                        <li className='border border-white rounded-full px-3 py-1 text-sm' key={detailIndex}>
-                                            {detailItem}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        );
-                    })}
-                </div>
-            </div>
-        </div>
-    );
-}
+      {/* Image Slider */}
+      <Splide
+        options={{
+          rewind: true,
+          gap: '', 
+          width: '100%',
+          autoplay: true,
+          pauseOnHover: true,
+          type: 'loop',
+        }}
+        aria-label="Event Highlights"
+      >
+        {eventImages.map((src, index) => (
+          <SplideSlide key={index}>
+            <img
+              src={src}
+              alt={`Event ${index + 1}`}
+              className="w-[90%] mx-auto pb-4 rounded-xl object-cover h-[400px] md:h-[600px]" // Set fixed height
+            />
+          </SplideSlide>
+        ))}
+      </Splide>
+    </div>
+  );
+};
+
+export default AboutACM;
