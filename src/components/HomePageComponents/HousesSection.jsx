@@ -57,7 +57,7 @@ const HousesSection = () => {
 
         {/* Player Image (Center) */}
         <div className="w-full md:w-3/4 lg:w-auto flex justify-center">
-          <img src={currentPlayer} alt="Player" className="w-full md:w-3/4 lg:w-auto" />
+          <img src={currentPlayer} alt="Player" className="hidden md:block w-full md:w-3/4 lg:w-auto" />
         </div>
 
         {/* Right Column */}
