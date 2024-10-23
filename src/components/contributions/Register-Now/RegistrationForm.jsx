@@ -117,8 +117,7 @@ const RegistrationForm = () => {
       setVjudgeUsernameWarning(true);
     }
   };
-  
-  
+
 
   const handlePhoneChange = (name, value) => {
     setFormData(prevData => ({ ...prevData, [name]: value }));

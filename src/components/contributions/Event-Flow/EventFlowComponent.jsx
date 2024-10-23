@@ -33,9 +33,9 @@ export default function EventFlowComponent() {
                 <span className="whitespace-nowrap">25 October</span>
               </h1>
               <p className="lg:mb-0 mb-2">Registration Starts</p>
-              <p className="text-[0.8rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.5rem] 2xl:text-[1.7rem]">
+              {/* <p className="text-[0.8rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.5rem] 2xl:text-[1.7rem]">
                 Sign up to showcase your skills in an exciting competition!
-              </p>
+              </p> */}
             </div>
 
           </div>
@@ -51,9 +51,9 @@ export default function EventFlowComponent() {
             <div className="mr-3 mb-5 sm:mb-7 2xl:mt-0 lg:mb-0 xl:mt-5 lg:mt-9 flex flex-col justify-center text-end xl:gap-0 2xl:gap-3 text-[#FFFFFF] w-[74%] sm:w-[63.2%] lg:w-[45%] xl:w-[40%] 2xl:w-[30%] text-[1.2rem] sm:text-[1.5rem] md:text-[1.76rem] lg:text-[2.3rem] xl:text-[2.5rem] 2xl:text-[2.7rem]">
               <h1 className="fira-code-heading font-[600]"><span className="whitespace-nowrap">7 November</span></h1>
               <p className="lg:mb-0 mb-2">Qualifier Round Begins</p>
-              <p className="text-[0.726rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.5rem] 2xl:text-[1.7rem]">
+              {/* <p className="text-[0.726rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.5rem] 2xl:text-[1.7rem]">
                 Compete to secure your spot in the finals—let the games begin!
-              </p>
+              </p> */}
             </div>
             <div>
               <img
@@ -82,9 +82,9 @@ export default function EventFlowComponent() {
             <div className="ml-3 mb-7 2xl:mt-0 lg:mb-0 xl:mt-5 lg:mt-9 flex flex-col justify-center xl:gap-0 2xl:gap-3 text-[#FFFFFF] w-[78%] sm:w-[60%] lg:w-[45%] xl:w-[40%] 2xl:w-[30%] text-[1.2rem] sm:text-[1.5rem] md:text-[1.76rem] lg:text-[2.3rem] xl:text-[2.5rem] 2xl:text-[2.7rem]">
               <h1 className="fira-code-heading font-[600]"><span className="whitespace-nowrap">14 November</span></h1>
               <p className="lg:mb-0 mb-2">Drafting</p>
-              <p className="text-[0.75rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.5rem] 2xl:text-[1.7rem]">
+              {/* <p className="text-[0.75rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.5rem] 2xl:text-[1.7rem]">
                 Finalize your strategies and prepare for the ultimate contest!
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
@@ -99,9 +99,9 @@ export default function EventFlowComponent() {
             <div className="mr-3 mb-5 sm:mb-7 2xl:mt-0 lg:mb-0 xl:mt-5 lg:mt-9 flex flex-col justify-center text-end xl:gap-0 2xl:gap-3 text-[#FFFFFF] w-[74%] sm:w-[63.2%] lg:w-[45%] xl:w-[40%] 2xl:w-[30%] text-[1.2rem] sm:text-[1.5rem] md:text-[1.76rem] lg:text-[2.3rem] xl:text-[2.5rem] 2xl:text-[2.7rem]">
               <h1 className="fira-code-heading font-[600]"><span className="whitespace-nowrap">19 November</span></h1>
               <p className="lg:mb-0 mb-2">Final Round & Closing Ceremony</p>
-              <p className="text-[0.726rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.5rem] 2xl:text-[1.7rem]">
+              {/* <p className="text-[0.726rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.5rem] 2xl:text-[1.7rem]">
                  Watch top competitors battle for victory!
-              </p>
+              </p> */}
             </div>
             <div>
               <img
