@@ -29,12 +29,15 @@ export default function EventFlowComponent() {
               />
             </div>
             <div className="ml-3 mb-5 sm:mb-7 2xl:mt-0 lg:mb-0 xl:mt-5 lg:mt-9 flex flex-col justify-center xl:gap-0 2xl:gap-3 text-[#FFFFFF] w-[74%] sm:w-[60%] lg:w-[45%] xl:w-[40%] 2xl:w-[30%] text-[1.2rem] sm:text-[1.5rem] md:text-[1.76rem] lg:text-[2.3rem] xl:text-[2.5em] 2xl:text-[2.7rem]">
-              <h1 className="fira-code-heading font-[600]">20 August</h1>
-              <p className="lg:mb-0 mb-2">event code</p>
-              <p className="text-[0.8rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.5rem] 2xl:text-[1.7rem]">
-                Gorem ipsum dolor sit amet, consectetur adipiscing elit
-              </p>
-            </div>
+            <h1 className="fira-code-heading font-[600]">
+              <span className="whitespace-nowrap">25 August</span>
+            </h1>
+            <p className="lg:mb-0 mb-2">Registration Starts</p>
+            <p className="text-[0.8rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.5rem] 2xl:text-[1.7rem]">
+            Kick off your journey by signing up for an exciting competition.
+            </p>
+          </div>
+
           </div>
         </div>
 
@@ -46,10 +49,10 @@ export default function EventFlowComponent() {
 
           <div className="absolute flex top-5 sm:top-8 lg:top-10 2xl:top-20 right-[22%] md:right-[22.2%] lg:right-[12.3rem] xl:right-[15rem] 2xl:right-[17.8rem] justify-end lg:h-[53%] 2xl:h-auto">
             <div className="mr-3 mb-5 sm:mb-7 2xl:mt-0 lg:mb-0 xl:mt-5 lg:mt-9 flex flex-col justify-center text-end xl:gap-0 2xl:gap-3 text-[#FFFFFF] w-[74%] sm:w-[63.2%] lg:w-[45%] xl:w-[40%] 2xl:w-[30%] text-[1.2rem] sm:text-[1.5rem] md:text-[1.76rem] lg:text-[2.3rem] xl:text-[2.5rem] 2xl:text-[2.7rem]">
-              <h1 className="fira-code-heading font-[600]">20 August</h1>
-              <p className="lg:mb-0 mb-2">event code</p>
+              <h1 className="fira-code-heading font-[600]"><span className="whitespace-nowrap">20 August</span></h1>
+              <p className="lg:mb-0 mb-2">Qualifier Round Begins</p>
               <p className="text-[0.726rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.5rem] 2xl:text-[1.7rem]">
-                Gorem ipsum dolor sit amet, consectetur adipiscing elit
+              Contestants face off to secure their spot in the final showdown.
               </p>
             </div>
             <div>
@@ -77,10 +80,10 @@ export default function EventFlowComponent() {
               />
             </div>
             <div className="ml-3 mb-7 2xl:mt-0 lg:mb-0 xl:mt-5 lg:mt-9 flex flex-col justify-center xl:gap-0 2xl:gap-3 text-[#FFFFFF] w-[78%] sm:w-[60%] lg:w-[45%] xl:w-[40%] 2xl:w-[30%] text-[1.2rem] sm:text-[1.5rem] md:text-[1.76rem] lg:text-[2.3rem] xl:text-[2.5rem] 2xl:text-[2.7rem]">
-              <h1 className="fira-code-heading font-[600]">20 August</h1>
-              <p className="lg:mb-0 mb-2">event code</p>
+              <h1 className="fira-code-heading font-[600]"><span className="whitespace-nowrap">20 August</span></h1>
+              <p className="lg:mb-0 mb-2">Final Round</p>
               <p className="text-[0.75rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.5rem] 2xl:text-[1.7rem]">
-                Gorem ipsum dolor sit amet, consectetur adipiscing elit
+              The top competitors showcase their skills in a thrilling climax to the event.
               </p>
             </div>
           </div>
@@ -94,10 +97,10 @@ export default function EventFlowComponent() {
 
           <div className="absolute flex top-5 sm:top-8 lg:top-10 2xl:top-20 right-[22%] md:right-[22.2%] lg:right-[12.3rem] xl:right-[15rem] 2xl:right-[17.8rem] justify-end lg:h-[53%] 2xl:h-auto">
             <div className="mr-3 mb-5 sm:mb-7 2xl:mt-0 lg:mb-0 xl:mt-5 lg:mt-9 flex flex-col justify-center text-end xl:gap-0 2xl:gap-3 text-[#FFFFFF] w-[74%] sm:w-[63.2%] lg:w-[45%] xl:w-[40%] 2xl:w-[30%] text-[1.2rem] sm:text-[1.5rem] md:text-[1.76rem] lg:text-[2.3rem] xl:text-[2.5rem] 2xl:text-[2.7rem]">
-              <h1 className="fira-code-heading font-[600]">20 August</h1>
-              <p className="lg:mb-0 mb-2">event code</p>
+              <h1 className="fira-code-heading font-[600]"><span className="whitespace-nowrap">20 August</span></h1>
+              <p className="lg:mb-0 mb-2">Closing Ceremony</p>
               <p className="text-[0.726rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.5rem] 2xl:text-[1.7rem]">
-                Gorem ipsum dolor sit amet, consectetur adipiscing elit
+              Celebrate achievements and honor the winners in a festive conclusion to the competition.
               </p>
             </div>
             <div>

@@ -40,15 +40,15 @@ const HousesSection = () => {
           <ClubCard
             image={RealMadrid}
             playerImage={RealMadridPlayer}
-            name="Red Devils"
-            description="Resilience, teamwork, and relentless drive."
+            name="GALACTICOS"
+            description="Precision, skill, and unmatched excellence."
             handleHover={handleHover}
             handleMouseLeave={handleMouseLeave}
           />
           <ClubCard
             image={Arsenal}
             playerImage={ArsenalPlayer}
-            name="Gunners"
+            name="GUNNERS"
             description="Creativity, innovation, and outside-the-box thinking."
             handleHover={handleHover}
             handleMouseLeave={handleMouseLeave}
@@ -65,15 +65,15 @@ const HousesSection = () => {
           <ClubCard
             image={Manchestor}
             playerImage={ManchestorPlayer}
-            name="Galacticos"
-            description="Precision, skill, and unmatched excellence."
+            name="RED DEVILS"
+            description="Resilience, teamwork, and relentless drive."
             handleHover={handleHover}
             handleMouseLeave={handleMouseLeave}
           />
           <ClubCard
             image={Barcelona}
             playerImage={BarcelonaPlayer}
-            name="Culers"
+            name="CULERS"
             description="Collaboration and technical finesse at their finest."
             handleHover={handleHover}
             handleMouseLeave={handleMouseLeave}
@@ -84,7 +84,6 @@ const HousesSection = () => {
   );
 };
 
-// ClubCard Component
 const ClubCard = ({ image, playerImage, name, description, handleHover, handleMouseLeave }) => (
   <div
     className="card justify-center items-center flex flex-col gap-y-4 p-8 cursor-pointer"
@@ -93,7 +92,10 @@ const ClubCard = ({ image, playerImage, name, description, handleHover, handleMo
   >
     <img src={image} alt={name} className="w-48 md:w-64" />
     <p className="text-white text-sm md:text-base text-center">
-      <strong>{name}:</strong> {description}
+      <strong>{name}</strong>
+    </p>
+    <p className="text-white text-sm md:text-base text-center">
+      {description}
     </p>
   </div>
 );

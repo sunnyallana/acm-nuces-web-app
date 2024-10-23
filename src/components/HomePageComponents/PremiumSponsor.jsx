@@ -28,9 +28,11 @@ export default function PremiumSponsor() {
   return (
     <>
       <div className="flex justify-center px-2 sm:px-0 text-center items-center mb-4">
-        <h1 className="fira-code text-[#FFFFFF] text-4xl">
-          <span className="text-[#FFD866]">Premium Sponsors</span>
-        </h1>
+        {/* <h1 className="fira-code text-[#FFFFFF] text-4xl"> */}
+        <h6 className="text-center font-bold text-4xl md:text-4xl bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text">
+          TO BE REVEALED SOON
+          {/* <span className="text-[#FFD866]">PREMIUM SPONSORS</span> */}
+        </h6>
       </div>
 
       {/* Marquee moving to the right */}
