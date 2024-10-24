@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css/sea-green'; 
+import '@splidejs/react-splide/css/sea-green';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
+// Import images
 import event1 from "../../assets/images/events/event1.jpg";
 import event2 from '../../assets/images/events/event2.jpg';
 import event3 from '../../assets/images/events/event3.jpg';
@@ -35,40 +40,107 @@ const eventImages = [
 ];
 
 const AboutACM = () => {
+  // Refs to target elements for animation
+  const headingRef = useRef(null);
+  const descRef = useRef(null);
+  const sliderRef = useRef(null);
+
+  useEffect(() => {
+    // Heading Animation on Scroll
+    gsap.fromTo(
+      headingRef.current,
+      { y: -100, opacity: 0 }, // Initial state
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: 'top 80%', // Animation starts when 80% of the element is visible
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+
+    // Description Animation on Scroll
+    gsap.fromTo(
+      descRef.current,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: descRef.current,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+
+    // Image Slider Animation on Scroll
+    gsap.fromTo(
+      sliderRef.current.querySelectorAll('.splide__slide'),
+      { opacity: 0, scale: 0.8 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        stagger: 0.2, // Stagger the animation for each slide
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: sliderRef.current,
+          start: 'top 90%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  }, []);
+
   return (
     <div className="bg-transparent text-white p-6">
       {/* Heading */}
-      <h1 className="text-center text-3xl md:text-7xl font-bold py-6 px-2 mb-6 bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text">
-      HISTORY OF <span className="text-[#17A0B7]">CODERS CUP</span>
+      <h1
+        ref={headingRef}
+        className="text-center text-3xl md:text-7xl font-bold py-6 px-2 mb-6 bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text"
+      >
+        HISTORY OF <span className="text-[#17A0B7]">CODERS CUP</span>
       </h1>
 
       {/* Description */}
-      <p className="text-center text-lg md:text-xl mb-10 px-4 md:px-20">
-      Over the years, the event has grown in scale, attracting talented participants. Coder's Cup not only nurtures technical excellence but also encourages collaboration and teamwork, establishing itself as a prestigious platform for budding coders.
+      <p
+        ref={descRef}
+        className="text-center text-lg md:text-xl mb-10 px-4 md:px-20"
+      >
+        Over the years, the event has grown in scale, attracting talented participants. Coder's Cup not only nurtures technical excellence but also encourages collaboration and teamwork, establishing itself as a prestigious platform for budding coders.
       </p>
 
       {/* Image Slider */}
-      <Splide
-        options={{
-          rewind: true,
-          gap: '', 
-          width: '100%',
-          autoplay: true,
-          pauseOnHover: true,
-          type: 'loop',
-        }}
-        aria-label="Event Highlights"
-      >
-        {eventImages.map((src, index) => (
-          <SplideSlide key={index}>
-            <img
-              src={src}
-              alt={`Event ${index + 1}`}
-              className="w-[90%] mx-auto pb-4 rounded-xl object-cover h-[400px] md:h-[600px]" // Set fixed height
-            />
-          </SplideSlide>
-        ))}
-      </Splide>
+      <div ref={sliderRef}>
+        <Splide
+          options={{
+            rewind: true,
+            gap: '',
+            width: '100%',
+            autoplay: true,
+            pauseOnHover: true,
+            type: 'loop',
+          }}
+          aria-label="Event Highlights"
+        >
+          {eventImages.map((src, index) => (
+            <SplideSlide key={index}>
+              <img
+                src={src}
+                alt={`Event ${index + 1}`}
+                className="w-[90%] mx-auto pb-4 rounded-xl object-cover h-[400px] md:h-[600px]"
+              />
+            </SplideSlide>
+          ))}
+        </Splide>
+      </div>
     </div>
   );
 };
