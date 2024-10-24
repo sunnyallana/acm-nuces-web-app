@@ -12,7 +12,6 @@ export default function EventFlow() {
             <Header />
             <WaveComponent />
             <EventFlowComponent />   
-            <SliderComponent />
             <GlimpseComponent />
             <Rules />      
         </>
