@@ -13,8 +13,8 @@ export default function EventFlow() {
             <WaveComponent />
             <EventFlowComponent />   
             <SliderComponent />
-            <Rules />  
-            <GlimpseComponent />    
+            <GlimpseComponent />
+            <Rules />      
         </>
     );
 }

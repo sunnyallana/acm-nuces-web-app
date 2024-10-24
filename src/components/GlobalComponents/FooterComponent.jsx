@@ -7,6 +7,8 @@ const developers = [
   { name: "Sunny Shaban Ali", linkedIn: "https://www.linkedin.com/in/sunnyallana/"},
   { name: "Owais Rafiq", linkedIn: "https://www.linkedin.com/in/owais-rafiq-639494253/"},
   { name: "Ali Nazir", linkedIn: "https://www.linkedin.com/in/ali-nazir-74b909275/"},
+  { name: "Sameer Ahmed", linkedIn: "https://www.linkedin.com/in/sameer-vers3/"},
+  { name: "Sahil Latif", linkedIn: "https://www.linkedin.com/in/sahil-latif"},
 ];
 
 const FooterComponent = () => {
