@@ -1,12 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 export default function Header() {
-  const navigate = useNavigate(); // Initialize useNavigate
-
-  const handleRegisterClick = () => {
-    navigate('/registration'); // Navigate to the registration page
-  };
 
   return (
     <div className="mt-32">
