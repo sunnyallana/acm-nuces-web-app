@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import rightImg from "../../../assets/images/header-registration.png";
+import rightImg from "../../../assets/images/header-registration.svg";
 
 export default function Header() {
   const navigate = useNavigate();
