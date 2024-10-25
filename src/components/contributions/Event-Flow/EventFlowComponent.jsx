@@ -70,9 +70,9 @@ export default function EventFlowComponent() {
   }, [])
 
   return (
-    <div ref={componentRef}>
+    <>
       <div className="my-14 sm:my-20 text-[#FFFFFF] text-center z-10">
-        <h1 className="event-flow-title text-[37px] md:text-[42px] lg:text-[56px] xl:text-[96px] font-[700]">
+        <h1 className="text-[37px] md:text-[42px] lg:text-[56px] xl:text-[96px] font-[700]">
           EVENT FLOW
         </h1>
       </div>
