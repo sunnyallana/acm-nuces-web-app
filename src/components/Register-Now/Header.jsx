@@ -26,7 +26,7 @@ export default function Header() {
           <div className="relative w-[320px] sm:w-[400px] md:w-[500px] lg:w-[600px] aspect-[16/9] mx-auto">
             <iframe
               className="absolute inset-0 w-full h-full rounded-3xl shadow-lg"
-              src="https://www.youtube.com/embed/plWzLoYqJgY?autoplay=1&mute=1&loop=1&playlist=plWzLoYqJgY"
+              src="https://www.youtube.com/embed/aMNqSRqdYWQ?autoplay=1&mute=0&loop=1"
               title="YouTube video player"
               frameBorder="0"
               allow="autoplay; loop; encrypted-media; picture-in-picture"
