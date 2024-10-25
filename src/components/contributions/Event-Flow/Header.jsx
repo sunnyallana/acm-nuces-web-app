@@ -1,92 +1,18 @@
-'use client'
-
-import React, { useEffect, useRef } from "react"
-import { useNavigate } from "react-router-dom"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import rightImg from "../../../assets/images/header-registration.svg"
-
-gsap.registerPlugin(ScrollTrigger)
+import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import rightImg from "../../../assets/images/header-registration.png";
 
 export default function Header() {
-  const navigate = useNavigate()
-  const headerRef = useRef(null)
+  const navigate = useNavigate();
+  const headerRef = useRef(null);
 
   const handleDragStart = (event) => {
-    event.preventDefault()
-  }
+    event.preventDefault();
+  };
 
   const handleRegisterClick = () => {
-    navigate('/registration')
-  }
-
-  useEffect(() => {
-    const header = headerRef.current
-    const title = header.querySelector('.title')
-    const subtitle = header.querySelector('.subtitle')
-    const button = header.querySelector('.register-button')
-    const image = header.querySelector('.header-image')
-
-    gsap.fromTo(title, 
-      { opacity: 0, y: 50 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1,
-        scrollTrigger: {
-          trigger: header,
-          start: "top 80%",
-          end: "top 20%",
-          scrub: 1,
-        }
-      }
-    )
-
-    gsap.fromTo(subtitle, 
-      { opacity: 0, y: 50 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 1,
-        scrollTrigger: {
-          trigger: header,
-          start: "top 75%",
-          end: "top 25%",
-          scrub: 1,
-        }
-      }
-    )
-
-    gsap.fromTo(button, 
-      { opacity: 0, scale: 0.8 },
-      { 
-        opacity: 1, 
-        scale: 1, 
-        duration: 1,
-        scrollTrigger: {
-          trigger: header,
-          start: "top 70%",
-          end: "top 30%",
-          scrub: 1,
-        }
-      }
-    )
-
-    gsap.fromTo(image, 
-      { opacity: 0, x: 100 },
-      { 
-        opacity: 1, 
-        x: 0, 
-        duration: 1,
-        scrollTrigger: {
-          trigger: header,
-          start: "top 80%",
-          end: "top 20%",
-          scrub: 1,
-        }
-      }
-    )
-  }, [])
+    navigate('/registration');
+  };
 
   return (
     <div ref={headerRef} className="mt-32 z-10">
@@ -110,12 +36,12 @@ export default function Header() {
           <img 
             className="header-image"
             src={rightImg} 
-            alt="right-img" 
+            alt="header-image" 
             style={{ userSelect: 'none' }} 
             onDragStart={handleDragStart}
           />
         </div>
       </div>
     </div>
-  )
+  );
 }
