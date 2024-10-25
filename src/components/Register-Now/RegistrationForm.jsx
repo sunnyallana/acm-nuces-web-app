@@ -126,30 +126,33 @@ const RegistrationForm = () => {
 
   const validateForm = () => {
     const newErrors = {};
+    
+    // Validate each field
     Object.keys(formData).forEach(key => {
       const error = validateField(key, formData[key]);
       if (error) newErrors[key] = error;
     });
-
-    // Additional validations for unique IDs and emails
+  
+    // Unique IDs check
     const ids = [formData.leaderId, formData.mem1Id, formData.mem2Id].filter(Boolean);
     if (new Set(ids).size !== ids.length) {
       newErrors._errors = [...(newErrors._errors || []), 'All IDs must be unique.'];
     }
-
+  
+    // Unique emails check
     const emails = [formData.leaderEmail, formData.mem1Email, formData.mem2Email].filter(Boolean);
     const lowerCaseEmails = emails.map(email => email.toLowerCase());
     if (new Set(lowerCaseEmails).size !== lowerCaseEmails.length) {
       newErrors._errors = [...(newErrors._errors || []), 'All emails must be unique.'];
     }
-
+  
     // Batch validation
     const getBatch = (id) => id ? parseInt(id.slice(0, 2), 10) : null;
     const leaderBatch = getBatch(formData.leaderId);
     const mem1Batch = getBatch(formData.mem1Id);
     const mem2Batch = getBatch(formData.mem2Id);
     const allBatches = [leaderBatch, mem1Batch, mem2Batch].filter(batch => batch !== null);
-
+  
     if (!allBatches.every(batch => batch >= 20 && batch <= 24)) {
       newErrors._errors = [...(newErrors._errors || []), 'All members must belong to batches 20-24.'];
     } else if (leaderBatch === 20 || leaderBatch === 21) {
@@ -159,20 +162,20 @@ const RegistrationForm = () => {
     } else if (!allBatches.every(batch => batch === leaderBatch)) {
       newErrors._errors = [...(newErrors._errors || []), 'All members must be from the same batch for batches 22K-24K.'];
     }
-
-    // Check if Member 2 details are partially filled
+  
+    // Member 2 partial details check
     const isMem2PartiallyFilled = 
       (formData.mem2Name && (!formData.mem2Id || !formData.mem2Email || !formData.mem2WhatsappNumber)) ||
       (formData.mem2Id && (!formData.mem2Name || !formData.mem2Email || !formData.mem2WhatsappNumber)) ||
       (formData.mem2Email && (!formData.mem2Name || !formData.mem2Id || !formData.mem2WhatsappNumber)) ||
       (formData.mem2WhatsappNumber && (!formData.mem2Name || !formData.mem2Id || !formData.mem2Email));
-
+  
     if (isMem2PartiallyFilled) {
       const confirmDiscard = window.confirm("Member 2 details are incomplete. Do you want to discard these partial details?");
       if (!confirmDiscard) {
         newErrors._errors = [...(newErrors._errors || []), 'Please fill in all details for Member 2 or discard them.'];
       } else {
-        // Clear Member 2 fields if the user decides to discard
+        // Clear Member 2 fields if discarded
         setFormData(prevData => ({
           ...prevData,
           mem2Name: '',
@@ -182,11 +185,53 @@ const RegistrationForm = () => {
         }));
       }
     }
-
+  
+    // Check username and email matches
+    const checkUsernameEmailMatch = (username, email) => {
+      const usernameParts = username.split('-');
+      if (usernameParts.length !== 2) {
+        console.log("Invalid username format");
+        return false;
+      }
+  
+      // Extract batch, campus, and roll number
+      const batchPart = usernameParts[0].slice(0, 2); // Batch
+      const campusPart = usernameParts[0].charAt(2).toUpperCase(); // Campus
+      const rollNumberPart = usernameParts[1]; // Roll number
+  
+      // Extract email parts
+      const emailParts = email.split('@')[0]; // Part before @
+      const emailCampusPart = emailParts.charAt(0).toUpperCase(); // Campus
+      const emailBatchPart = emailParts.slice(1, 3); // Batch
+      const emailRollNumberPart = emailParts.slice(3); // Roll number
+  
+      const isMatch =
+        campusPart === emailCampusPart &&
+        batchPart === emailBatchPart &&
+        rollNumberPart === emailRollNumberPart;
+  
+      console.log(`Match Result: ${isMatch}`);
+      return isMatch;
+    };
+  
+    // Validate matches
+    if (!checkUsernameEmailMatch(formData.leaderId, formData.leaderEmail)) {
+      newErrors._errors = [...(newErrors._errors || []), 'Leader username and email do not match.'];
+    }
+    if (!checkUsernameEmailMatch(formData.mem1Id, formData.mem1Email)) {
+      newErrors._errors = [...(newErrors._errors || []), 'Member 1 username and email do not match.'];
+    }
+    if (formData.mem2Name && !checkUsernameEmailMatch(formData.mem2Id, formData.mem2Email)) {
+      newErrors._errors = [...(newErrors._errors || []), 'Member 2 username and email do not match.'];
+    }
+  
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
   
+  
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -203,8 +248,7 @@ const RegistrationForm = () => {
         }
 
         const response = await requestApi.post(`/register`, submissionData);
-        console.log('Response:', response.data);
-        
+      
         // Show success toast
         toast.success(response.data.message || 'Registration successful! 🎉', {
           position: "top-right",
