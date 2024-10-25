@@ -2,14 +2,17 @@ import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Player from "../../assets/images/houses/ronaldo.png";
+
 import RealMadridPlayer from "../../assets/images/houses/ronaldo.png";
 import ManchestorPlayer from "../../assets/images/houses/Rooney.png";
 import BarcelonaPlayer from "../../assets/images/houses/Messi.png";
 import ArsenalPlayer from "../../assets/images/houses/Ozil.png";
-import RealMadrid from "../../assets/images/houses/real-madrid.png";
-import Manchestor from "../../assets/images/houses/manchestor.png";
-import Barcelona from "../../assets/images/houses/barcelona.png";
-import Arsenal from "../../assets/images/houses/arsenal.png";
+
+import Culers from "../../assets/images/houses/houses-logo/coders-cup-24-culers.png";
+import Galacticos from "../../assets/images/houses/houses-logo/coders-cup-24-galacticos.png";
+import Gunners from "../../assets/images/houses/houses-logo/coders-cup-24-gunners.png";
+import RedDevil from "../../assets/images/houses/houses-logo/coders-cup-24-red-devils.png";
+
 import Background from "../../assets/images/houses/bg.png";
 
 // Register ScrollTrigger
@@ -167,7 +170,7 @@ const HousesSection = () => {
         >
           <ClubCard
             ref={(el) => (clubCardsRef.current[0] = el)}
-            image={RealMadrid}
+            image={Galacticos}
             playerImage={RealMadridPlayer}
             name="GALACTICOS"
             description="Precision, skill, and unmatched excellence."
@@ -175,7 +178,7 @@ const HousesSection = () => {
           />
           <ClubCard
             ref={(el) => (clubCardsRef.current[1] = el)}
-            image={Arsenal}
+            image={Gunners}
             playerImage={ArsenalPlayer}
             name="GUNNERS"
             description="Creativity, innovation, and outside-the-box thinking."
@@ -198,11 +201,11 @@ const HousesSection = () => {
         {/* Right Column */}
         <div
           ref={rightColumnRef}
-          className="flex flex-col items-center gap-y-8 p-6 md:p-12"
+          className="flex flex-col items-center gap-y-0 md:gap-y-8 p-6 md:p-12"
         >
           <ClubCard
             ref={(el) => (clubCardsRef.current[2] = el)}
-            image={Manchestor}
+            image={RedDevil}
             playerImage={ManchestorPlayer}
             name="RED DEVILS"
             description="Resilience, teamwork, and relentless drive."
@@ -210,7 +213,7 @@ const HousesSection = () => {
           />
           <ClubCard
             ref={(el) => (clubCardsRef.current[3] = el)}
-            image={Barcelona}
+            image={Culers}
             playerImage={BarcelonaPlayer}
             name="CULERS"
             description="Collaboration and technical finesse at their finest."

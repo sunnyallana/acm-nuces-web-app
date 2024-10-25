@@ -106,7 +106,7 @@ const AboutACM = () => {
         ref={headingRef}
         className="text-center text-3xl md:text-7xl font-bold py-6 px-2 mb-6 bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text"
       >
-        HISTORY OF <span className="text-[#17A0B7]">CODERS CUP</span>
+        <span className="text-[#17A0B7]">CODERS CUP</span> HISTORY
       </h1>
 
       {/* Description */}
@@ -116,9 +116,8 @@ const AboutACM = () => {
       >
         Over the years, the event has grown in scale, attracting talented participants. Coder's Cup not only nurtures technical excellence but also encourages collaboration and teamwork, establishing itself as a prestigious platform for budding coders.
       </p>
-
       {/* Image Slider */}
-      <div ref={sliderRef}>
+      <div ref={sliderRef} className="w-full">
         <Splide
           options={{
             rewind: true,
@@ -135,12 +134,22 @@ const AboutACM = () => {
               <img
                 src={src}
                 alt={`Event ${index + 1}`}
-                className="w-[90%] mx-auto pb-4 rounded-xl object-cover h-[400px] md:h-[600px]"
+                className="w-full mx-auto pb-4 rounded-xl object-contain h-[400px] md:h-[600px]"
               />
             </SplideSlide>
           ))}
         </Splide>
+        <style jsx>{`
+          /* Hide the arrows on mobile */
+          @media (max-width: 768px) {
+            .splide__arrow {
+              display: none;
+            }
+          }
+        `}</style>
       </div>
+
+
     </div>
   );
 };
