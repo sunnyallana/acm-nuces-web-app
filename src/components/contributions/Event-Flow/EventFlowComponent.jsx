@@ -1,8 +1,8 @@
 import React from "react";
-import part1 from "../../../assets/images/Part-1.png";
-import part2 from "../../../assets/images/Part-2.png";
-import part3 from "../../../assets/images/Part-3.png";
-import bar from "../../../assets/images/bar.png";
+import part1 from "../../../assets/images/event-flow-diagram/Part-1.png";
+import part2 from "../../../assets/images/event-flow-diagram/Part-2.png";
+import part3 from "../../../assets/images/event-flow-diagram/Part-3.png";
+import bar from "../../../assets/images/event-flow-diagram/bar.png";
 
 export default function EventFlowComponent() {
   return (

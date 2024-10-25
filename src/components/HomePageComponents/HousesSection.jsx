@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Player from "../../assets/images/houses/ronaldo.png";
 
-import RealMadridPlayer from "../../assets/images/houses/ronaldo.png";
-import ManchestorPlayer from "../../assets/images/houses/Rooney.png";
-import BarcelonaPlayer from "../../assets/images/houses/Messi.png";
-import ArsenalPlayer from "../../assets/images/houses/Ozil.png";
+import RealMadridPlayer from "../../assets/images/houses/houses-player/ronaldo.png";
+import ManchestorPlayer from "../../assets/images/houses/houses-player/Rooney.png";
+import BarcelonaPlayer from "../../assets/images/houses/houses-player/Messi.png";
+import ArsenalPlayer from "../../assets/images/houses/houses-player/Ozil.png";
 
 import Culers from "../../assets/images/houses/houses-logo/coders-cup-24-culers.png";
 import Galacticos from "../../assets/images/houses/houses-logo/coders-cup-24-galacticos.png";
@@ -19,7 +18,7 @@ import Background from "../../assets/images/houses/bg.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const HousesSection = () => {
-  const [currentPlayer, setCurrentPlayer] = useState(Player);
+  const [currentPlayer, setCurrentPlayer] = useState(RealMadridPlayer);
 
   // Create refs for animated elements
   const sectionRef = useRef(null);
