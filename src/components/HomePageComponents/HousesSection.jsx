@@ -12,8 +12,6 @@ import Galacticos from "../../assets/images/houses/houses-logo/coders-cup-24-gal
 import Gunners from "../../assets/images/houses/houses-logo/coders-cup-24-gunners.png";
 import RedDevil from "../../assets/images/houses/houses-logo/coders-cup-24-red-devils.png";
 
-import Background from "../../assets/images/houses/bg.png";
-
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
@@ -143,15 +141,8 @@ const HousesSection = () => {
   };
 
   return (
-    <div ref={sectionRef} className="relative flex flex-col justify-center items-center gap-y-4 p-8 min-h-screen overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 flex justify-center items-center">
-        <div
-          className="background w-full md:w-11/12 h-screen bg-cover bg-center opacity-70"
-          style={{ backgroundImage: `url(${Background})` }}
-        />
-      </div>
-
+    <div ref={sectionRef} className="relative flex flex-col justify-center items-center gap-y-4 p-8 min-h-screen overflow-hidden" style={{ backgroundColor: 'rgba(15, 15, 65, 0.7)' }}>
+      
       {/* Title Section */}
 
       <h1

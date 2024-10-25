@@ -1,6 +1,6 @@
 import HeroSection from "../components/HomePageComponents/HeroSection"
 import AboutCodersCup from "../components/HomePageComponents/AboutCodersCup"
-import AboutACM from "../components/HomePageComponents/AboutACM"
+import CodersCupHistory from "../components/HomePageComponents/CodersCupHistory"
 import SponsorComp from "../components/HomePageComponents/SponsorComp"
 import CodersCupBanner from "../components/HomePageComponents/CodersCupBanner"
 import HousesSection from "../components/HomePageComponents/HousesSection"
@@ -10,7 +10,7 @@ export default function HomePage(){
         <div className="overflow-hidden">
             <HeroSection />
             <AboutCodersCup/>
-            <AboutACM/>
+            <CodersCupHistory/>
             <SponsorComp/>
             <HousesSection/>
             <CodersCupBanner/>
