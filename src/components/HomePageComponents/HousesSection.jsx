@@ -154,9 +154,10 @@ const HousesSection = () => {
       </div>
 
       {/* Title Section */}
+
       <h1
         ref={titleRef}
-        className="text-white text-center text-4xl md:text-5xl lg:text-6xl font-bold z-10 mb-8"
+        className="text-center text-3xl md:text-7xl font-bold py-6 px-2 mb-6 bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text"
       >
         HOUSES DETAILS
       </h1>
