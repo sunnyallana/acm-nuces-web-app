@@ -44,7 +44,7 @@ const CodersCupBanner = () => {
         </span>
       </div>
       <div className="text-white text-[3vw] font-light font-mono break-words mb-4">
-        Technology beyond Imagination
+        Code, Compile, and Conquer
       </div>
     </div>
   );
