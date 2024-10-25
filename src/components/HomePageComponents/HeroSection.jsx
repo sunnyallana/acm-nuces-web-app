@@ -96,12 +96,14 @@ export default function HeroSection() {
 
             <div className="flex flex-col items-end pr-4 sm:pr-10 mt-12 md:mt-0">
                 <p className="text-white font-bold text-sm mb-2 pr-2">POWERED BY</p>
-                <img
-                    className="w-24 h-auto max-w-full"
-                    src={sponsor}
-                    alt="Sponsor Logo"
-                    ref={sponsorRef} // Sponsor animation ref
-                />
+                <a href="https://www.instagram.com/circliphy" target="_blank" rel="noopener noreferrer">
+                    <img
+                        className="w-24 h-auto max-w-full"
+                        src={sponsor}
+                        alt="Sponsor Logo"
+                        ref={sponsorRef}
+                    />
+                </a>
             </div>
         </div>
     );
