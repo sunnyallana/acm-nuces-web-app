@@ -7,12 +7,12 @@ import bar from "../../../assets/images/event-flow-diagram/bar.png";
 export default function EventFlowComponent() {
   return (
     <>
-      <div className="my-14 sm:my-20 text-[#FFFFFF] text-center z-10">
-        <h1 className="text-[37px] md:text-[42px] lg:text-[56px] xl:text-[96px] font-[700]">
-          EVENT FLOW
-        </h1>
-      </div>
-
+      <h1
+        className="text-center text-3xl md:text-7xl font-bold py-6 px-2 mb-6 bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text"
+      >
+        EVENT FLOW
+      </h1>
+      
       <div className="mx-6 sm:mx-14 md:mx-20 lg:mx-auto">
         {/* First Part*/}
         <div className="mx-auto relative lg:w-[890px] xl:w-[1080px] 2xl:w-[1300px]">
