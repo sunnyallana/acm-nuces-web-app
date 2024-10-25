@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import EventFlow from "./pages/EventFlow";
 import RegistrationPage from "./pages/RegistrationPage";
 import FAQPage from "./pages/FAQPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -33,6 +34,7 @@ export default function App() {
                 <Route path="/event-flow" element={<EventFlow />} />
                 <Route path="/registration" element={<RegistrationPage />} />
                 <Route path="/faq" element={<FAQPage />} />
+                <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </div>
           </main>
