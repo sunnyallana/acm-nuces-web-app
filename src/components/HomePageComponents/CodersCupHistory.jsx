@@ -39,7 +39,7 @@ const eventImages = [
   event16, event17, event18, event19, event20, event21, event22, event23
 ];
 
-const AboutACM = () => {
+const CodersCupHistory = () => {
   // Refs to target elements for animation
   const headingRef = useRef(null);
   const descRef = useRef(null);
@@ -154,4 +154,4 @@ const AboutACM = () => {
   );
 };
 
-export default AboutACM;
+export default CodersCupHistory;

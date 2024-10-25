@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from '../components/contributions/Register-Now/Header'
-import RegistrationForm from '../components/contributions/Register-Now/RegistrationForm'
+import Header from '../components/Register-Now/Header'
+import RegistrationForm from '../components/Register-Now/RegistrationForm'
 
 const RegistrationPage = () => {
   return (
