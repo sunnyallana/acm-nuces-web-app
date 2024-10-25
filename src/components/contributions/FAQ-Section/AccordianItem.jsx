@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa'; // Importing icons from Font Awesome
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa'; 
 
 const AccordianItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
