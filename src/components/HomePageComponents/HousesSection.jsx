@@ -31,18 +31,6 @@ const HousesSection = () => {
     ScrollTrigger.refresh();
 
     const ctx = gsap.context(() => {
-      // Background parallax effect
-      gsap.to(".background", {
-        yPercent: 30,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-
       // Title Animation
       gsap.fromTo(
         titleRef.current,
@@ -142,12 +130,10 @@ const HousesSection = () => {
 
   return (
     <div ref={sectionRef} className="relative flex flex-col justify-center items-center gap-y-4 p-8 min-h-screen overflow-hidden" style={{ backgroundColor: 'rgba(15, 15, 65, 0.7)' }}>
-      
       {/* Title Section */}
-
       <h1
         ref={titleRef}
-        className="text-center text-3xl md:text-7xl font-bold py-6 px-2 mb-6 bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text"
+        className="text-center text-3xl md:text-7xl font-bold py-6 px-2 mb-6 bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text z-10"
       >
         HOUSES DETAILS
       </h1>
@@ -155,10 +141,7 @@ const HousesSection = () => {
       {/* Content Section */}
       <div className="flex flex-col lg:flex-row justify-center items-center gap-y-8 lg:gap-x-4 z-10">
         {/* Left Column */}
-        <div
-          ref={leftColumnRef}
-          className="flex flex-col items-center gap-y-8 p-6 md:p-12"
-        >
+        <div ref={leftColumnRef} className="flex flex-col items-center gap-y-8 p-6 md:p-12">
           <ClubCard
             ref={(el) => (clubCardsRef.current[0] = el)}
             image={Galacticos}
@@ -178,10 +161,7 @@ const HousesSection = () => {
         </div>
 
         {/* Player Image (Center) */}
-        <div
-          ref={playerImageRef}
-          className="w-full md:w-3/4 lg:w-auto flex justify-center"
-        >
+        <div ref={playerImageRef} className="w-full md:w-3/4 lg:w-auto flex justify-center">
           <img
             src={currentPlayer}
             alt="Player"
@@ -190,10 +170,7 @@ const HousesSection = () => {
         </div>
 
         {/* Right Column */}
-        <div
-          ref={rightColumnRef}
-          className="flex flex-col items-center gap-y-0 md:gap-y-8 p-6 md:p-12"
-        >
+        <div ref={rightColumnRef} className="flex flex-col items-center gap-y-0 md:gap-y-8 p-6 md:p-12">
           <ClubCard
             ref={(el) => (clubCardsRef.current[2] = el)}
             image={RedDevil}
