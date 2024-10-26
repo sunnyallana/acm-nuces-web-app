@@ -7,36 +7,22 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-// Import images
-import event1 from "../../assets/images/events/event1.jpg";
-import event2 from '../../assets/images/events/event2.jpg';
-import event3 from '../../assets/images/events/event3.jpg';
-import event4 from '../../assets/images/events/event4.jpg';
-import event5 from '../../assets/images/events/event5.jpg';
-import event6 from '../../assets/images/events/event6.jpg';
-import event7 from '../../assets/images/events/event7.jpg';
-import event8 from '../../assets/images/events/event8.jpg';
-import event9 from '../../assets/images/events/event9.jpg';
-import event10 from '../../assets/images/events/event10.jpg';
-import event11 from '../../assets/images/events/event11.jpg';
-import event12 from '../../assets/images/events/event12.jpg';
-import event13 from '../../assets/images/events/event13.jpg';
-import event14 from '../../assets/images/events/event14.jpg';
-import event15 from '../../assets/images/events/event15.jpg';
-import event16 from '../../assets/images/events/event16.jpg';
-import event17 from '../../assets/images/events/event17.jpg';
-import event18 from '../../assets/images/events/event18.jpeg';
-import event19 from '../../assets/images/events/event19.jpg';
-import event20 from '../../assets/images/events/event20.jpg';
-import event21 from '../../assets/images/events/event21.jpg';
-import event22 from '../../assets/images/events/event22.jpg';
-import event23 from '../../assets/images/events/event23.jpg';
-
 // Store images in an array
 const eventImages = [
-  event1, event2, event3, event4, event5, event6, event7, event8,
-  event9, event10, event11, event12, event13, event14, event15,
-  event16, event17, event18, event19, event20, event21, event22, event23
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964503/event1_ajb9dz.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964504/event2_exeisd.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964505/event3_ncetf6.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964508/event4_sq8ywt.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964512/event7_ueqdta.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964514/event8_g7cewl.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964515/event9_vvsjiy.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964516/event10_lvjqtq.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964522/event14_tp1vth.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964523/event15_fssddm.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964519/event12_d9nxg9.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964518/event11_p2j8ws.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964511/event5_brgezt.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964533/event23_fa8ety.jpg"
 ];
 
 const CodersCupHistory = () => {

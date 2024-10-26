@@ -1,40 +1,22 @@
-'use client'
-
 import React, { useEffect, useRef } from "react"
 import Marquee from "react-fast-marquee"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-import img1 from "../../../assets/images/coders-cup-23-glimpse/acm-coders-cup-23-1.jpg"
-import img2 from "../../../assets/images/coders-cup-23-glimpse/acm-coders-cup-23-2.jpg"
-import img3 from "../../../assets/images/coders-cup-23-glimpse/acm-coders-cup-23-3.jpg"
-import img4 from "../../../assets/images/coders-cup-23-glimpse/acm-coders-cup-23-4.jpg"
-import img5 from "../../../assets/images/coders-cup-23-glimpse/acm-coders-cup-23-5.jpg"
-import img6 from "../../../assets/images/coders-cup-23-glimpse/acm-coders-cup-23-6.jpg"
-import img7 from "../../../assets/images/coders-cup-23-glimpse/acm-coders-cup-23-7.jpg"
-import img8 from "../../../assets/images/coders-cup-23-glimpse/acm-coders-cup-23-8.jpg"
-import img9 from "../../../assets/images/coders-cup-23-glimpse/acm-coders-cup-23-9.jpg"
-import img10 from "../../../assets/images/coders-cup-23-glimpse/acm-coders-cup-23-10.jpg"
-import img11 from "../../../assets/images/coders-cup-23-glimpse/acm-coders-cup-23-11.jpg"
-import img12 from "../../../assets/images/coders-cup-23-glimpse/acm-coders-cup-23-12.jpg"
-import img13 from "../../../assets/images/coders-cup-23-glimpse/acm-coders-cup-23-13.jpg"
-
 gsap.registerPlugin(ScrollTrigger)
 
 const images = [
-  img1,
-  img2,
-  img3,
-  img4,
-  img5,
-  img6,
-  img7,
-  img8,
-  img9,
-  img10,
-  img11,
-  img12,
-  img13,
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964487/acm-coders-cup-23-1_cr0ue1.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964486/acm-coders-cup-23-2_lk2c0f.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964487/acm-coders-cup-23-3_tc2q0x.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964488/acm-coders-cup-23-4_cwpsjk.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964490/acm-coders-cup-23-5_vfqigw.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964492/acm-coders-cup-23-7_ylz6jy.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964495/acm-coders-cup-23-10_ti87wp.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964494/acm-coders-cup-23-8_dhdsiq.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964496/acm-coders-cup-23-9_ahrr3y.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964496/acm-coders-cup-23-6_zrceac.jpg",
+  "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964496/acm-coders-cup-23-11_pdmfuo.jpg",
 ]
 
 export default function GlimpseComponentlow() {

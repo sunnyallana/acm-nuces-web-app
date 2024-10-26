@@ -2,15 +2,17 @@ import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import RealMadridPlayer from "../../assets/images/houses/houses-player/ronaldo.png";
-import ManchestorPlayer from "../../assets/images/houses/houses-player/Rooney.png";
-import BarcelonaPlayer from "../../assets/images/houses/houses-player/Messi.png";
-import ArsenalPlayer from "../../assets/images/houses/houses-player/Ozil.png";
+// Player images
+const RealMadridPlayer = "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964453/ronaldo_y5jn14.png"; 
+const ManchestorPlayer = "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964453/Rooney_j85knu.png"; 
+const BarcelonaPlayer = "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964450/Messi_qzwjrn.png"; 
+const ArsenalPlayer = "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964450/Ozil_w4dz8t.png"; 
 
-import Culers from "../../assets/images/houses/houses-logo/coders-cup-24-culers.png";
-import Galacticos from "../../assets/images/houses/houses-logo/coders-cup-24-galacticos.png";
-import Gunners from "../../assets/images/houses/houses-logo/coders-cup-24-gunners.png";
-import RedDevil from "../../assets/images/houses/houses-logo/coders-cup-24-red-devils.png";
+// Club logos
+const Culers = "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964535/coders-cup-24-culers_wqgnhq.png";
+const Galacticos = "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964536/coders-cup-24-galacticos_ucb1cb.png";
+const Gunners = "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964537/coders-cup-24-gunners_xrvzyh.png";
+const RedDevil = "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964539/coders-cup-24-red-devils_f2zwag.png";
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
