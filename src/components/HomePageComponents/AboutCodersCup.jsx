@@ -2,7 +2,8 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import logo from '../../assets/images/coders-cup-logo.png';
+// Use the Cloudinary URL for the logo
+const logo = "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964433/coders-cup-logo_n2cwdl.png";
 
 gsap.registerPlugin(ScrollTrigger); // Register ScrollTrigger plugin
 
@@ -60,7 +61,7 @@ export default function AboutCodersCup() {
                     className="w-full md:w-4/12"
                     src={logo}
                     alt="Coders Cup Logo"
-                    ref={logoRef} // Ref for the logo animation
+                    ref={logoRef}
                 />
             </div>
         </div>

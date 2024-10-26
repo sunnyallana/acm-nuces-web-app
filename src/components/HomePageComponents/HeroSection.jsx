@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import logo from '../../assets/images/coders-cup-logo.png';
 import heroBg from '../../assets/images/backgrounds/hero-bg.png';
 import sponsor from '../../assets/images/sponsors/sponsor-logo.png';
 
@@ -81,7 +80,7 @@ export default function HeroSection() {
             <div className="flex flex-col items-center mt-12">
                 <img
                     className="w-64 h-auto mb-4"
-                    src={logo}
+                    src="https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964433/coders-cup-logo_n2cwdl.png" // Updated logo URL
                     alt="Coders Cup Logo"
                     ref={logoRef} // Logo animation ref
                 />
