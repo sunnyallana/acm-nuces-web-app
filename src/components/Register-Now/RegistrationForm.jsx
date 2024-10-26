@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const requestApi = axios.create({
-  baseURL: apiUrl,
+  baseURL: 'https://coders-cup-24-backend.azurewebsites.net',
 });
 
 const RegistrationForm = () => {
@@ -239,7 +239,6 @@ const RegistrationForm = () => {
     if (validateForm()) {
       try {
         const submissionData = { ...formData };
-        // Omit Member 2 details if they're empty
         if (!formData.mem2Name) {
           delete submissionData.mem2Name;
           delete submissionData.mem2Id;
@@ -253,7 +252,6 @@ const RegistrationForm = () => {
           },
         });
         
-
         // Show success toast
         toast.success(response.data.message || 'Registration successful! 🎉', {
           position: "top-right",
