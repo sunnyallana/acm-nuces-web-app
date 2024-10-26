@@ -5,7 +5,7 @@ import axios from 'axios';
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const apiUrl = import.meta.env.VITE_API_URL;
+// const apiUrl = import.meta.env.VITE_API_URL;
 
 const requestApi = axios.create({
   baseURL: 'https://coders-cup-24-backend.azurewebsites.net',
@@ -71,7 +71,7 @@ const RegistrationForm = () => {
       case 'mem1Email':
       case 'mem2Email':
         if (!value && name !== 'mem2Email') return `${fieldLabels[name]} is required.`;
-        if (value && !/^[a-zA-Z]\d{6}@nu\.edu\.pk$/.test(value)) return 'Invalid email format.';
+        if (value && !/^(k|l|i|p|f)(\d{6})(@)(\w+\.)?(nu\.edu\.pk)$/i.test(value)) return 'Invalid email format.';
         return '';
       case 'leaderWhatsappNumber':
       case 'mem1WhatsappNumber':
@@ -82,6 +82,7 @@ const RegistrationForm = () => {
         return '';
     }
   };
+  
 
 
   const handleChange = (e) => {
