@@ -454,7 +454,7 @@ const RegistrationForm = () => {
               {renderField('mem2Id', fieldLabels.mem2Id, 'e.g. 22L-1234', 'text', false)}
               {renderField('mem2Email', fieldLabels.mem2Email, 'e.g. l221234@nu.edu.pk', 'email', false)}
               {renderPhoneField('mem2WhatsappNumber', fieldLabels.mem2WhatsappNumber, 'e.g. +92 314 0000000', false)}
-{/* 
+
               <div className="col-span-1 sm:col-span-2">
                 <button   
                   type="submit" 
@@ -463,7 +463,7 @@ const RegistrationForm = () => {
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit'}
                 </button>
-              </div> */}
+              </div>
               
               {errors._errors && errors._errors.map((error, index) => (
                 <div key={index} className="text-red-400 col-span-1 sm:col-span-2">{error}</div>
