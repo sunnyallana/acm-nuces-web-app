@@ -116,40 +116,41 @@ const CodersCupHistory = () => {
       >
         Over the years, the event has grown in scale, attracting talented participants. Coder's Cup not only nurtures technical excellence but also encourages collaboration and teamwork, establishing itself as a prestigious platform for budding coders.
       </p>
-{/* Image Slider */}
-<div ref={sliderRef} className="w-full sm:max-w-[90%] mx-auto">
-  <Splide
-    options={{
-      rewind: true,
-      gap: '',
-      width: '100%',
-      autoplay: true,
-      pauseOnHover: true,
-      type: 'loop',
-    }}
-    aria-label="Event Highlights"
-  >
-    {eventImages.map((src, index) => (
-      <SplideSlide key={index}>
-        <img
-          src={src}
-          alt={`Event ${index + 1}`}
-          className="w-full mx-auto pb-4 rounded-xl object-contain h-[400px] md:h-[600px]"
-        />
-      </SplideSlide>
-    ))}
-      </Splide>
-      <style jsx>{`
-        /* Hide the arrows on mobile */
-        @media (max-width: 768px) {
-          .splide__arrow {
-            display: none;
+
+      {/* Image Slider */}
+      <div ref={sliderRef} className="w-full sm:max-w-[90%] mx-auto">
+        <Splide
+          options={{
+            rewind: true,
+            gap: '',
+            width: '100%',
+            autoplay: true,
+            pauseOnHover: true,
+            type: 'loop',
+          }}
+          aria-label="Event Highlights"
+        >
+          {eventImages.map((src, index) => (
+            <SplideSlide key={index}>
+              <img
+                src={src}
+                alt={`Event ${index + 1}`}
+                className="w-full mx-auto pb-4 rounded-xl object-contain h-[400px] md:h-[600px]"
+              />
+            </SplideSlide>
+          ))}
+        </Splide>
+      </div>
+
+      <style>
+        {`
+          @media (max-width: 768px) {
+            .splide__arrow {
+              display: none;
+            }
           }
-        }
-      `}</style>
-    </div>
-
-
+        `}
+      </style>
     </div>
   );
 };
