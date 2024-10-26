@@ -247,8 +247,13 @@ const RegistrationForm = () => {
           delete submissionData.mem2WhatsappNumber;
         }
 
-        const response = await requestApi.post(`/register`, submissionData);
-      
+        const response = await requestApi.post(`/register`, submissionData, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        
+
         // Show success toast
         toast.success(response.data.message || 'Registration successful! 🎉', {
           position: "top-right",
