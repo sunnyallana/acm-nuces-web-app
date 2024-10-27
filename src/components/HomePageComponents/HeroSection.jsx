@@ -3,9 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import heroBg from '../../assets/images/backgrounds/hero-bg.png';
-import sponsor from '../../assets/images/sponsors/sponsor-logo.png';
-
 gsap.registerPlugin(ScrollTrigger); // Register ScrollTrigger plugin
 
 export default function HeroSection() {
@@ -74,7 +71,7 @@ export default function HeroSection() {
     return (
         <div
             className="w-full bg-cover bg-center h-full flex flex-col justify-between py-20 overflow-hidden"
-            style={{ backgroundImage: `url(${heroBg})` }}
+            style={{ backgroundImage: `url(https://res.cloudinary.com/dm1xi8zff/image/upload/v1730031261/hero-bg_ixlcmk.png)` }} // Updated hero background URL
             ref={containerRef} // Parallax effect container
         >
             <div className="flex flex-col items-center mt-12">
@@ -98,7 +95,7 @@ export default function HeroSection() {
                 <a href="https://www.instagram.com/circliphy" target="_blank" rel="noopener noreferrer">
                     <img
                         className="w-24 h-auto max-w-full"
-                        src={sponsor}
+                        src="https://res.cloudinary.com/dm1xi8zff/image/upload/v1730031565/sponsor-logo_lw4lwb.png"
                         alt="Sponsor Logo"
                         ref={sponsorRef}
                     />
