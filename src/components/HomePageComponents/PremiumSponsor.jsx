@@ -1,27 +1,27 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
 
-// Importing images with the correct paths
-import temp from "../../assets/images/temp.png";
+// New image link
+const tempImage = "https://res.cloudinary.com/dm1xi8zff/image/upload/v1730032080/temp_r1a0ve.png";
 
 const images = [
-  temp,
-  temp,
-  temp,
-  temp,
-  temp,
-  temp,
-  temp,
+  tempImage,
+  tempImage,
+  tempImage,
+  tempImage,
+  tempImage,
+  tempImage,
+  tempImage,
 ];
 
 const moreImages = [
-  temp,
-  temp,
-  temp,
-  temp,
-  temp,
-  temp,
-  temp,
+  tempImage,
+  tempImage,
+  tempImage,
+  tempImage,
+  tempImage,
+  tempImage,
+  tempImage,
 ];
 
 export default function PremiumSponsor() {

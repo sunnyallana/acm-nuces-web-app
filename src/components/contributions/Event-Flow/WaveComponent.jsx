@@ -1,11 +1,11 @@
 import React from 'react';
-import wave from '../../../assets/images/waves.png';
+
+const waveImage = "https://res.cloudinary.com/dm1xi8zff/image/upload/v1730032374/waves_oq7m2m.png";
 
 export default function WaveComponent() {
     return (
         <div className="absolute hidden sm:block sm:top-[-2rem] md:top-[-2.9rem] lg:-top-24 -z-10">
-            {/* The image is set to cover the entire container */}
-            <img src={wave} alt="Wave Background"  />
+            <img src={waveImage} alt="Wave Background" className="w-full h-auto" />
         </div>
     );
 }

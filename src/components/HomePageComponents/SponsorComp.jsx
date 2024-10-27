@@ -1,7 +1,4 @@
-import { div } from 'framer-motion/client'
 import React from 'react'
-import GoldSponsor from './GoldSponsor'
-import PremiumSponsor from './PremiumSponsor'
 
 const SponsorComp = () => {
   return (

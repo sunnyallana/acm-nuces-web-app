@@ -1,5 +1,6 @@
-import React from 'react'
-import temp from "../../assets/images/temp.png"
+import React from 'react';
+
+const tempImage = "https://res.cloudinary.com/dm1xi8zff/image/upload/v1730032080/temp_r1a0ve.png";
 
 const GoldSponsor = () => {
   return (
@@ -8,11 +9,11 @@ const GoldSponsor = () => {
             <span className="text-[#FF6089]">Gold Sponsors</span>
         </h1>
         <div className='flex sm:flex-row flex-col justify-center items-center sm:gap-x-8 gap-y-8 w-[50%]'>
-            <img src={temp} alt="" className='w-72'/>
-            <img src={temp} alt="" className='w-72'/>
+            <img src={tempImage} alt="Gold Sponsor 1" className='w-72' />
+            <img src={tempImage} alt="Gold Sponsor 2" className='w-72' />
         </div>
     </div>
   )
 }
 
-export default GoldSponsor
+export default GoldSponsor;
