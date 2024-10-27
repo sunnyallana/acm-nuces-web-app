@@ -56,8 +56,8 @@ const FooterComponent = () => {
                 </a>
               </p>
               <p className="flex items-center text-[14px] sm:text-[15px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[22px] font-normal">
-                <a href="/" className="flex items-center text-white" aria-label="Live at coderscup.acmnuceskhi.com">
-                  <span className="mr-2">✉️</span> coderscup.acmnuceskhi.com
+                <a href="https://www.acmnuceskhi.com" className="flex items-center text-white" aria-label="Live at acmnuceskhi.com">
+                  <span className="mr-2">✉️</span> acmnuceskhi.com
                 </a>
               </p>
             </div>
