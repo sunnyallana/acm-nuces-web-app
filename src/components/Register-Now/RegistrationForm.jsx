@@ -4,6 +4,7 @@ import 'react-phone-input-2/lib/style.css';
 import axios from 'axios';
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ReCAPTCHA from "react-google-recaptcha";
 
 // const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -34,6 +35,8 @@ const RegistrationForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [focusedInput, setFocusedInput] = useState('');
   const [vjudgeUsernameWarning, setVjudgeUsernameWarning] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState(null);
+
 
   const fieldLabels = {
     teamName: 'Team Name',
@@ -231,28 +234,37 @@ const RegistrationForm = () => {
   };
   
   
-  
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     console.log('Submitting form:', formData);
-    if (validateForm()) {
+    
+    // Check if the reCAPTCHA token is present
+    if (!recaptchaToken) {
+      setIsSubmitting(false);
+      toast.error('Please complete the CAPTCHA.');
+      return;
+    }
+  
+    if (validateForm() && recaptchaToken) {
       try {
         const submissionData = { ...formData };
+  
+        // Exclude Member 2 data if not provided
         if (!formData.mem2Name) {
           delete submissionData.mem2Name;
           delete submissionData.mem2Id;
           delete submissionData.mem2Email;
           delete submissionData.mem2WhatsappNumber;
         }
-
+  
         const response = await requestApi.post(`/register`, submissionData, {
           headers: {
             'Content-Type': 'application/json',
+            'X-Recaptcha-Token': recaptchaToken
           },
         });
-        
+  
         // Show success toast
         toast.success(response.data.message || 'Registration successful! 🎉', {
           position: "top-right",
@@ -265,7 +277,7 @@ const RegistrationForm = () => {
           theme: "dark",
           transition: Bounce,
         });
-
+  
         // Reset form after successful submission
         setFormData({
           teamName: '',
@@ -284,9 +296,9 @@ const RegistrationForm = () => {
           mem2WhatsappNumber: '',
         });
         setErrors({});
+        setRecaptchaToken(null); // Reset token after submission
       } catch (error) {
         console.error('Error submitting form:', error);
-        
         // Handle different error types based on status codes
         if (error.response) {
           switch (error.response.status) {
@@ -382,6 +394,8 @@ const RegistrationForm = () => {
     }
     setIsSubmitting(false);
   };
+  
+
 
   const renderField = (name, label, placeholder, type = 'text', required = true, colspan = false) => (
     <div key={name} className={colspan ? "col-span-1 sm:col-span-2" : ""}>
@@ -459,6 +473,13 @@ const RegistrationForm = () => {
               {renderField('mem2Email', fieldLabels.mem2Email, 'e.g. l221234@nu.edu.pk', 'email', false)}
               {renderPhoneField('mem2WhatsappNumber', fieldLabels.mem2WhatsappNumber, 'e.g. +92 314 0000000', false)}
 
+              <ReCAPTCHA
+                sitekey="6LeN0m0qAAAAAHHnmUiZ7eAtZo507_yxF2LiS9JV"
+                onChange={setRecaptchaToken}
+                theme="dark"
+                size="normal"
+              />
+        
               <div className="col-span-1 sm:col-span-2">
                 <button   
                   type="submit" 
