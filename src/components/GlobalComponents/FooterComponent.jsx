@@ -51,8 +51,8 @@ const FooterComponent = () => {
             <div className="flex flex-col justify-center items-center gap-y-1">
               <h1 className="mb-2 text-lg font-bold uppercase text-[18px] md:text-[20px]">Contact Us</h1>
               <p className="flex items-center text-[14px] sm:text-[15px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[22px] font-normal">
-                <a href="tel:+923222883752" className="flex items-center text-white" aria-label="Call us at (+92) 322-2883752">
-                  <FontAwesomeIcon icon={faPhone} className="mr-2" /> (+92) 322-2883752
+                <a href="https://wa.me/+923128971349" className="flex items-center text-white" aria-label="Call us at (+92) 322-2883752">
+                  <FontAwesomeIcon icon={faPhone} className="mr-2" /> (+92) 312-8971349
                 </a>
               </p>
               <p className="flex items-center text-[14px] sm:text-[15px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[22px] font-normal">

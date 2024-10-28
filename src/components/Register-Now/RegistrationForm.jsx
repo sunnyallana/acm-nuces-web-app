@@ -37,6 +37,37 @@ const RegistrationForm = () => {
   const [vjudgeUsernameWarning, setVjudgeUsernameWarning] = useState(false);
   const [recaptchaToken, setRecaptchaToken] = useState(null);
 
+  const [otpSent, setOtpSent] = useState(false);
+  const [otpCode, setOtpCode] = useState('');
+  const [isOtpSubmitting, setIsOtpSubmitting] = useState(false);
+
+  const sendOtp = async () => {
+    try {
+      setIsOtpSubmitting(true);
+      const response = await requestApi.post('/send-otp', { email: formData.leaderEmail });
+      toast.success(response.data.message || 'OTP sent successfully!');
+      setOtpSent(true);
+    } catch (error) {
+      toast.error('Error sending OTP. Please try again.');
+    } finally {
+      setIsOtpSubmitting(false);
+    }
+  };
+
+  const verifyOtpAndSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await requestApi.post('/verify-otp', { email: formData.leaderEmail, otp: otpCode });
+      toast.success(response.data.message || 'OTP verified successfully! Submitting your registration...');
+      
+      // Proceed to submit the registration form
+      handleSubmit(e);
+    } catch (error) {
+      toast.error('Invalid OTP. Please try again.');
+    }
+  };
+  
+
 
   const fieldLabels = {
     teamName: 'Team Name',
@@ -297,6 +328,9 @@ const RegistrationForm = () => {
         });
         setErrors({});
         setRecaptchaToken(null); // Reset token after submission
+        setOtpSent(false); // Reset OTP status
+        setOtpCode(''); // Clear OTP input
+
       } catch (error) {
         console.error('Error submitting form:', error);
         // Handle different error types based on status codes
