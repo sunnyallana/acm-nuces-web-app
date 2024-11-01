@@ -7,8 +7,8 @@ const RegistrationPage = () => {
   return (
     <div>
       <Header />
-      <RegistrationForm/>
-      {/* <RegistrationClosedNotice/> */}
+      {/* <RegistrationForm/> */}
+      <RegistrationClosedNotice/>
     </div>
   )
 }
