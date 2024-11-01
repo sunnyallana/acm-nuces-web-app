@@ -1,5 +1,6 @@
 import React from 'react'
-import GoldSponsor from "./GoldSponsor.jsx";
+import TitleSponsor from "./TitleSponsor.jsx";
+import PremiumSponsor from './PremiumSponsor.jsx';
 
 const SponsorComp = () => {
   return (
@@ -10,14 +11,9 @@ const SponsorComp = () => {
             </h1>
         </div>
       <div className="flex justify-center px-2 sm:px-0 text-center items-center mb-4">
-        {/* <h1 className="fira-code text-[#FFFFFF] text-4xl"> */}
-        <h6 className="text-center font-bold text-4xl md:text-4xl bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text">
-          {/* TO BE REVEALED SOON */}
-          {/* <span className="text-[#FFD866]">PREMIUM SPONSORS</span> */}
-        </h6>
       </div>
-        <GoldSponsor/>
-        {/* <PremiumSponsor/> */}
+        <TitleSponsor/>
+        <PremiumSponsor/>
     </div>
   )
 }
