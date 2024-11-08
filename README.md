@@ -5,8 +5,6 @@ This repository contains the code for the **Coders Cup 24** Web Application, bui
 ## Demo
 ![gtg](https://github.com/user-attachments/assets/ecd32989-f3ea-4b28-9de7-2efb7073ec7a)
   
-*Insert image of Google Analytics stats showing user engagement here.*
-
 ## Features
 
 ### Key Tasks & Achievements:
