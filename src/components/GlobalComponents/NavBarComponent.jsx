@@ -27,7 +27,7 @@ const Navbar = memo(() => {
             {/* Logo */}
             <Link to="/" aria-label="Go to Homepage">
               <motion.img 
-                src="https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964433/coders-cup-logo_n2cwdl.png"
+                src="https://res.cloudinary.com/dlriiwcsn/image/upload/v1731255902/1_dpdoye.png"
                 alt="Coders Cup Logo" 
                 className="h-12 w-auto sm:h-16 md:h-20 lg:h-16 xl:h-20"
                 initial={{ opacity: 0, y: -20 }}
