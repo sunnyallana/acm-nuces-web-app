@@ -19,7 +19,7 @@ const Loader = () => {
     <div className="h-screen w-screen bg-black flex flex-col items-center justify-center gap-8">
       {/* Logo */}
       <img
-        src="https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964433/coders-cup-logo_n2cwdl.png"
+        src="https://res.cloudinary.com/dlriiwcsn/image/upload/v1731254698/Coder_s_Cup_24_Logo_With_Sponsors_qyhl7g.png"
         alt="Coders Cup Logo"
         className="h-32 w-auto"
       />

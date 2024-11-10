@@ -12,9 +12,8 @@ const ArsenalPlayer = "https://res.cloudinary.com/dm1xi8zff/image/upload/v172996
 const Culers = "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964535/coders-cup-24-culers_wqgnhq.png";
 const Galacticos = "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964536/coders-cup-24-galacticos_ucb1cb.png";
 const Gunners = "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964537/coders-cup-24-gunners_xrvzyh.png";
-const RedDevil = "https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964539/coders-cup-24-red-devils_f2zwag.png";
+const RedDevil = "https://res.cloudinary.com/dlriiwcsn/image/upload/v1731253918/CC_24_-_Red_devils_Logo_White_Transparent_1_lmxorn.png";
 
-// Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
 const HousesSection = () => {
