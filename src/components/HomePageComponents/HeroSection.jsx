@@ -77,7 +77,7 @@ export default function HeroSection() {
             <div className="flex flex-col items-center mt-12">
                 <img
                     className="w-64 h-auto mb-4"
-                    src="https://res.cloudinary.com/dm1xi8zff/image/upload/v1729964433/coders-cup-logo_n2cwdl.png" // Updated logo URL
+                    src="https://res.cloudinary.com/dlriiwcsn/image/upload/v1731254698/Coder_s_Cup_24_Logo_With_Sponsors_qyhl7g.png"
                     alt="Coders Cup Logo"
                     ref={logoRef} // Logo animation ref
                 />
