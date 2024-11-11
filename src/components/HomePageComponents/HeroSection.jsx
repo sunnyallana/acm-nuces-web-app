@@ -84,7 +84,7 @@ export default function HeroSection() {
     >
       <div className="flex flex-col items-center justify-center mt-12">
         <img
-          className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-auto mb-8"
+          className="w-[250px] sm:w-[350px] md:w-[450px] lg:w-[500px] h-auto mb-8"
           src="https://res.cloudinary.com/dlriiwcsn/image/upload/v1731254698/Coder_s_Cup_24_Logo_With_Sponsors_qyhl7g.png"
           alt="Coders Cup Logo"
           ref={logoRef} // Logo animation ref
