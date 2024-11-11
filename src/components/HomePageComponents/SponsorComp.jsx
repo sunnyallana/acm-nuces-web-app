@@ -17,7 +17,7 @@ const SponsorComp = () => {
       {/* Blockeyfi Logo with Heading */}
       <div className="blockeyfi-logo-container mb-6 mt-8 flex flex-col items-center">
         <h2 className="fira-code text-gray-300 text-4xl mb-2">
-          <span className="uppercase text-white">Co-Sponsor</span>
+          <span className="uppercase font-bold text-white">Co-Sponsor</span>
         </h2>
         <img 
           src="https://res.cloudinary.com/dlriiwcsn/image/upload/v1731348560/Untitled_design_5_uzzrl0.png" 
@@ -31,7 +31,7 @@ const SponsorComp = () => {
         {/* Circliphy Logo with Heading */}
         <div className="flex flex-col items-center">
           <h2 className="fira-code text-gray-300 text-4xl mb-4">
-            <span className="uppercase text-white">Tech Partner</span>
+            <span className="uppercase text-white font-bold">Tech Partner</span>
           </h2>
           <img 
             src="https://res.cloudinary.com/dlriiwcsn/image/upload/v1731348643/Circliphy_Tech_partner_qk9s4z.png" 
@@ -43,7 +43,7 @@ const SponsorComp = () => {
         {/* Datacamp Logo with Heading */}
         <div className="flex flex-col items-center">
           <h2 className="fira-code text-gray-300 text-4xl mb-4">
-            <span className="uppercase text-white">Academic Partner</span>
+            <span className="uppercase text-white font-bold">Academic Partner</span>
           </h2>
           <img 
             src="https://res.cloudinary.com/dlriiwcsn/image/upload/v1731348617/Datacamp_1_rq7xyo.png" 
