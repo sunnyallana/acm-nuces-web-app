@@ -98,7 +98,8 @@ export default function HeroSection() {
         </button>
       </div>
 
-      <div className="flex flex-col items-end pr-4 sm:pr-10 mt-12 md:mt-0">
+      <div className="flex flex-col items-end pr-4 sm:pr-10 mt-8 md:mt-4">
+        {/* Reduced margin-top to bring "POWERED BY" higher */}
         <p className="text-white font-bold text-sm mb-2 pr-2">POWERED BY</p>
         <a
           href="https://www.instagram.com/circliphy"
