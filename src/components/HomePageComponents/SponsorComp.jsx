@@ -7,13 +7,12 @@ const SponsorComp = () => {
     <div className='flex flex-col justify-center items-center w-[100%] py-12'>
       <div className='flex flex-col justify-center items-center w-[100%] py-12'>
         <h1 className="text-center text-3xl md:text-7xl font-bold py-6 px-2 bg-gradient-to-b from-gray-200 to-gray-300 text-transparent bg-clip-text">
-                OUR PARTNERS
+          OUR PARTNERS
         </h1>
       </div>
       <TitleSponsor />
       <PremiumSponsor />
 
-      
       {/* Blockeyfi Logo with Heading */}
       <div className="blockeyfi-logo-container mb-6 mt-8 flex flex-col items-center">
         <h2 className="fira-code text-gray-300 text-4xl mb-2">
@@ -26,10 +25,10 @@ const SponsorComp = () => {
         />
       </div>
 
-      {/* Sponsor Logos in Row */}
-      <div className="flex justify-center gap-8 mb-12">
+      {/* Sponsor Logos in Row (with responsive behavior) */}
+      <div className="flex flex-col sm:flex-row justify-center gap-8 mb-12">
         {/* Circliphy Logo with Heading */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mb-6 sm:mb-0">
           <h2 className="fira-code text-gray-300 text-4xl mb-4">
             <span className="uppercase text-white font-bold">Tech Partner</span>
           </h2>
@@ -41,7 +40,7 @@ const SponsorComp = () => {
         </div>
 
         {/* Datacamp Logo with Heading */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mb-6 sm:mb-0">
           <h2 className="fira-code text-gray-300 text-4xl mb-4">
             <span className="uppercase text-white font-bold">Academic Partner</span>
           </h2>
