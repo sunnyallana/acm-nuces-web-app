@@ -9,7 +9,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 // const apiUrl = import.meta.env.VITE_API_URL;
 
 const requestApi = axios.create({
-  baseURL: 'https://coders-cup-24-backend.azurewebsites.net',
+  baseURL: 'REACT_APP_BACKEND_URL',
 });
 
 const RegistrationForm = () => {
@@ -60,7 +60,6 @@ const RegistrationForm = () => {
       const response = await requestApi.post('/verify-otp', { email: formData.leaderEmail, otp: otpCode });
       toast.success(response.data.message || 'OTP verified successfully! Submitting your registration...');
       
-      // Proceed to submit the registration form
       handleSubmit(e);
     } catch (error) {
       toast.error('Invalid OTP. Please try again.');
@@ -508,11 +507,12 @@ const RegistrationForm = () => {
               {renderPhoneField('mem2WhatsappNumber', fieldLabels.mem2WhatsappNumber, 'e.g. +92 314 0000000', false)}
 
               <ReCAPTCHA
-                sitekey="6LeN0m0qAAAAAHHnmUiZ7eAtZo507_yxF2LiS9JV"
+                sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
                 onChange={setRecaptchaToken}
                 theme="dark"
                 size="normal"
               />
+
         
               <div className="col-span-1 sm:col-span-2">
                 <button   
