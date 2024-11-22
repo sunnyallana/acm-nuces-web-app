@@ -82,7 +82,6 @@ const FooterComponent = () => {
           </div>
 
 
-            {/* GitHub Button
             <h1 className="mb-2 text-lg font-bold uppercase text-[18px] md:text-[20px]">REPOSITORY</h1>
             <a
               href="https://github.com/sunnyallana/acm-nuces-web-app"
@@ -114,7 +113,7 @@ const FooterComponent = () => {
                 </svg>
                 <span className="inline-block tabular-nums tracking-wider font-display font-medium text-white">6</span>
               </div>
-            </a> */}
+            </a>
           </div>
         </div>
 

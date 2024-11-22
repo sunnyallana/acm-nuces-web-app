@@ -6,8 +6,6 @@ import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ReCAPTCHA from "react-google-recaptcha";
 
-// const apiUrl = import.meta.env.VITE_API_URL;
-
 const requestApi = axios.create({
   baseURL: 'REACT_APP_BACKEND_URL',
 });
