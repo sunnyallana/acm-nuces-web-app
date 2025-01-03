@@ -44,11 +44,13 @@ const SponsorComp = () => {
           <h2 className="fira-code text-gray-300 text-4xl mb-4">
             <span className="uppercase text-white font-bold">Academic Partner</span>
           </h2>
-          <img 
-            src="https://res.cloudinary.com/dlriiwcsn/image/upload/v1731348617/Datacamp_1_rq7xyo.png" 
-            alt="Datacamp" 
-            className="max-w-[200px] object-contain" 
-          />
+          <a href='https://www.datacamp.com/donates?utm_source=donates&utm_medium=partner&utm_campaign=000000_1-internal_2-na_3-global_4-na_5-na_6-requirements_7-do_8-ptnr-pn_9-na_10-na_11-logo'>
+            <img 
+              src="https://res.cloudinary.com/dlriiwcsn/image/upload/v1731348617/Datacamp_1_rq7xyo.png" 
+              alt="Datacamp" 
+              className="max-w-[200px] object-contain" 
+            />
+          </a>
         </div>
       </div>
     </div>
